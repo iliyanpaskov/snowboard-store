@@ -1,2 +1,2 @@
-# snowboard-store
- first Angular app
+# Snowboard-store
+First Angular app
