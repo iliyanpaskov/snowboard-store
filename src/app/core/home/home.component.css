@@ -55,3 +55,20 @@
         width: 100%;
     }
 }
+
+.jon-snow-img,
+.white-walker-img {
+    position: absolute;
+}
+
+.white-walker-img {
+    bottom: 0;
+    left: 0;
+    width: 270px;
+}
+
+.jon-snow-img {
+    right: 0;
+    bottom: 0;
+    width: 265px;
+}
