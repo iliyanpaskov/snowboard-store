@@ -6,6 +6,7 @@ import { SharedModule } from '../shared/shared.module';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { AboutComponent } from './about/about.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
 
 
@@ -15,6 +16,7 @@ import { AboutComponent } from './about/about.component';
     FooterComponent,
     HomeComponent,
     AboutComponent,
+    ContactsComponent,
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,9 @@ import { AboutComponent } from './about/about.component';
   exports: [
     HeaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    AboutComponent,
+    ContactsComponent,
   ]
 })
 export class CoreModule { }
