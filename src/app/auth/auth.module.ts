@@ -4,6 +4,8 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthRoutingModule } from './auth-routing.module';
+import { OrdersComponent } from './orders/orders.component';
+import { CartComponent } from './cart/cart.component';
 
 
 
@@ -12,6 +14,8 @@ import { AuthRoutingModule } from './auth-routing.module';
     LoginComponent,
     SignUpComponent,
     ProfileComponent,
+    OrdersComponent,
+    CartComponent,
   ],
   imports: [
     CommonModule,

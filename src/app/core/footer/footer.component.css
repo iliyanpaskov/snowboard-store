@@ -1,6 +1,6 @@
 .footer {
-    background: #FFFFFF;
-    border-top: 5px solid #DCDCDC;
+    background: aliceblue;
+    border-top: 5px solid #6CC8BF;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,7 +38,7 @@
 
 .footer-services-list li a {
     text-decoration: none;
-    color: #CDCBCA;
+    color: #6CC8BF;
 }
 
 .footer-services-list li a:hover {
@@ -70,5 +70,5 @@
 }
 
 .footer-copyright {
-    color: #CDCBCA;
+    color: #6CC8BF;
 }

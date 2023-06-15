@@ -9,7 +9,6 @@ import { AboutComponent } from './about/about.component';
 import { ContactsComponent } from './contacts/contacts.component';
 
 
-
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -17,6 +16,7 @@ import { ContactsComponent } from './contacts/contacts.component';
     HomeComponent,
     AboutComponent,
     ContactsComponent,
+  
   ],
   imports: [
     CommonModule,

@@ -4,14 +4,12 @@
 }
 
 .about-us-section {
-    margin: 0 auto;
     max-width: 1221px;
     background-color: aliceblue;
     padding: 10px 25px;
-    margin:25px auto;
+    margin:25px auto 40px auto;
     border-radius: 25px;
     box-shadow: 3px 3px 17px 3px #837e7e;
-
 }
 
 .about-us-title {
