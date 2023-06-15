@@ -1,15 +1,15 @@
 import { RouterModule, Routes } from "@angular/router";
-import { LoaderComponent } from "../shared/loader/loader.component";
 import { SignUpComponent } from "./sign-up/sign-up.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { OrdersComponent } from "./orders/orders.component";
 import { CartComponent } from "./cart/cart.component";
+import { LoginComponent } from "./login/login.component";
 
 
 const routes: Routes = [
     {
         path: 'auth/login',
-        component: LoaderComponent,
+        component: LoginComponent,
     },
     {
         path: 'auth/signup',
