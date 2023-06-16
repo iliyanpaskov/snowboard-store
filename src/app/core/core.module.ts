@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { AboutComponent } from './about/about.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthModule } from '../auth/auth.module';
 
 
 @NgModule({
@@ -16,11 +18,13 @@ import { ContactsComponent } from './contacts/contacts.component';
     HomeComponent,
     AboutComponent,
     ContactsComponent,
+    PageNotFoundComponent,
   
   ],
   imports: [
     CommonModule,
     AppRoutingModule,
+    AuthModule,
     SharedModule,
   ],
   exports: [
@@ -29,6 +33,7 @@ import { ContactsComponent } from './contacts/contacts.component';
     HomeComponent,
     AboutComponent,
     ContactsComponent,
+    PageNotFoundComponent,
   ]
 })
 export class CoreModule { }

@@ -24,32 +24,38 @@
         </div>
 
         <div class="navigation-list-wrapper">
-            <!-- <ng-temlate> -->
-            <ul class="navigation-list">
-                <li>
-                    <a routerLink="auth/login">Login</a>
-                </li>
-                <li>
-                    <a routerLink="auth/signup">SignUp</a>
-                </li>
-            </ul>
-            <ul class="navigation-list">
-                <li>
-                    <a routerLink="auth/my-profile">My Profile</a>
-                </li>
-                <li>
-                    <a routerLink="auth/my-orders">My Orders</a>
-                </li>
-                <li>
-                    <a routerLink="/auth/logout">Logout</a>
-                </li>
-                <li>
-                    <a routerLink="/auth/my-cart" >
-                        <i class="fa-solid fa-cart-shopping"></i>
-                    </a>
-                </li>
-            </ul>
-            <!-- </ng-temlate> -->
+            <!-- <ng-template #guestTemplate> -->
+                <ul class="navigation-list">
+                    <li>
+                        <a routerLink="auth/login">Login</a>
+                    </li>
+                    <li>
+                        <a routerLink="auth/signup">SignUp</a>
+                    </li>
+                </ul>
+            <!-- </ng-template> -->
+
+            <!-- <ng-template #userTemplate> -->
+                <ul class="navigation-list">
+                    <li>
+                        <a routerLink="auth/my-profile">My Profile</a>
+                    </li>
+                    <li>
+                        <a routerLink="auth/my-orders">My Orders</a>
+                    </li>
+                    <li>
+                        <a routerLink="/auth/logout">Logout</a>
+                    </li>
+                    <li>
+                        <a routerLink="/auth/my-cart">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </li>
+                </ul>
+            <!-- </ng-template> -->
+
+            <!-- <ng-container *ngTemplateOutlet="isLoggedUser ?userTemplate :guestTemplate"> </ng-container> -->
+
         </div>
     </section>
 </header>

@@ -13,12 +13,12 @@ import { ProductsModule } from './products/products.module';
     AppComponent
   ],
   imports: [
+    ProductsModule,
+    AuthModule,
     BrowserModule,
-    AppRoutingModule,
     CoreModule,
     SharedModule,
-    AuthModule,
-    ProductsModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

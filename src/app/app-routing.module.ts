@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './core/home/home.component';
 import { AboutComponent } from './core/about/about.component';
 import { ContactsComponent } from './core/contacts/contacts.component';
+import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,14 @@ const routes: Routes = [
     path:'contacts',
     component: ContactsComponent,
   },
+  {
+    path:'**',
+    redirectTo:'/page-not-found'
+  },
+  {
+    path:'page-not-found',
+    component:PageNotFoundComponent
+  }
 ];
 
 @NgModule({
