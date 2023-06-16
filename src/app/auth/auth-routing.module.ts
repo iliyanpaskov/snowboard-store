@@ -4,6 +4,7 @@ import { ProfileComponent } from "./profile/profile.component";
 import { OrdersComponent } from "./orders/orders.component";
 import { CartComponent } from "./cart/cart.component";
 import { LoginComponent } from "./login/login.component";
+import { LogoutComponent } from "./logout/logout.component";
 
 
 const routes: Routes = [
@@ -14,6 +15,10 @@ const routes: Routes = [
     {
         path: 'auth/signup',
         component: SignUpComponent,
+    },
+    {
+        path: 'auth/logout',
+        component: LogoutComponent,
     },
     {
         path: 'auth/my-profile',
