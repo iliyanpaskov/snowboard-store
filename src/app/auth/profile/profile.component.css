@@ -1,0 +1,85 @@
+.my-profile-wrapper {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.my-profile {
+    width: 1221px;
+    background-color: aliceblue;
+    padding: 10px 25px;
+    margin: 25px auto 40px auto;
+    border-radius: 25px;
+    box-shadow: 3px 3px 17px 3px #837e7e;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.my-profile-greeting {
+    font-size: 50px;
+    color: white;
+    -webkit-text-stroke: 3px #000;
+    text-align: center;
+}
+
+.my-profile-user-id span{
+    font-weight: 600;
+    font-size: 50px;
+    color: #64dfd3;
+    -webkit-text-stroke: 1px #000;
+}
+
+.my-profile-user-id,
+.my-profile-item p {
+    font-size: 18px;
+    font-style: italic;
+    
+}
+
+.my-profile-item h2 {
+    font-size: 25px;
+    
+}
+
+
+.my-profile-buttons-list {
+    display: flex;
+    padding: 0;
+    list-style: none;
+    width: 250px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 29px;
+}
+
+
+.my-profile-button {
+    width: 150px !important;
+    background: #64dfd3;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 10px;
+    text-decoration: none;
+    border: 1px solid #000;
+    border-radius: 10px;
+    color: #000;
+}
+
+.my-profile-buttons-list li:hover {
+    cursor: pointer;
+    transition: transform .5s ease;
+    transform: scale(1.15);
+    background: #000;
+    color: #64dfd3;
+}
+
+.my-profile-button:hover {
+    cursor: pointer;
+    transition: transform .5s ease;
+    transform: scale(1.15);
+    background: #000;
+    color: #64dfd3;
+}
