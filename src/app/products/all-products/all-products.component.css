@@ -6,7 +6,6 @@
 .products {
     max-width: 1221px;
     background-color: aliceblue;
-    padding: 10px 25px;
     margin: 25px auto 40px auto;
     border-radius: 25px;
     box-shadow: 3px 3px 17px 3px #837e7e;
@@ -23,10 +22,42 @@
     text-transform: capitalize;
 }
 
+.boots {
+    grid-area: boots ;
+}
+
+.bindings {
+    grid-area: bindings;
+}
+
+.snowboards {
+    grid-area: snowboards;
+}
+
+.accessories {
+    grid-area: accessories;
+}
+
+.clothing {
+    grid-area: clothing;
+}
+
+.products-section-wrapper {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(5,1fr) ;
+    grid-template-areas: 
+    "boots boots boots bindings bindings"
+    "snowboards snowboards snowboards snowboards snowboards"
+    "accessories accessories clothing clothing clothing";
+    padding: 5px 15px; 
+}
+
+
 .products-section {
     position: relative;
-    width: 750px;
-    height: 400px;
+    /* width: 750px; */
+    max-height: 480px;
     margin: 20px;
 }
 

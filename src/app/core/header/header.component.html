@@ -24,7 +24,7 @@
         </div>
 
         <div class="navigation-list-wrapper">
-            <!-- <ng-template #guestTemplate> -->
+            <ng-template #guestTemplate>
                 <ul class="navigation-list">
                     <li>
                         <a routerLink="auth/login">Login</a>
@@ -33,9 +33,9 @@
                         <a routerLink="auth/signup">SignUp</a>
                     </li>
                 </ul>
-            <!-- </ng-template> -->
+            </ng-template>
 
-            <!-- <ng-template #userTemplate> -->
+            <ng-template #userTemplate>
                 <ul class="navigation-list">
                     <li>
                         <a routerLink="auth/my-profile">My Profile</a>
@@ -52,9 +52,9 @@
                         </a>
                     </li>
                 </ul>
-            <!-- </ng-template> -->
+            </ng-template>
 
-            <!-- <ng-container *ngTemplateOutlet="isLoggedUser ?userTemplate :guestTemplate"> </ng-container> -->
+            <ng-container *ngTemplateOutlet="isLoggedIn ?userTemplate :guestTemplate"> </ng-container>
 
         </div>
     </section>
