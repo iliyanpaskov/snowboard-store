@@ -19,7 +19,7 @@
 }
 
 .my-profile-greeting {
-    font-size: 50px;
+    font-size: 3.1rem;
     color: white;
     -webkit-text-stroke: 3px #000;
     text-align: center;
@@ -27,20 +27,20 @@
 
 .my-profile-user-id span{
     font-weight: 600;
-    font-size: 50px;
+    font-size: 1.9rem;
     color: #64dfd3;
     -webkit-text-stroke: 1px #000;
 }
 
 .my-profile-user-id,
 .my-profile-item p {
-    font-size: 18px;
+    font-size: 1.1rem;
     font-style: italic;
     
 }
 
 .my-profile-item h2 {
-    font-size: 25px;
+    font-size: 1.5rem;
     
 }
 
@@ -59,7 +59,7 @@
 .my-profile-button {
     width: 150px !important;
     background: #64dfd3;
-    font-size: 17px;
+    font-size: 1rem;
     font-weight: 600;
     padding: 10px;
     text-decoration: none;

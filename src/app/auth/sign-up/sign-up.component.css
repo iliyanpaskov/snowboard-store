@@ -18,7 +18,7 @@
 }
 
 .sign-up-title {
-    font-size: 50px;
+    font-size: 3.1rem;
     color: white;
     -webkit-text-stroke: 3px #000;
     text-align: center;
@@ -45,14 +45,14 @@
 
 .sign-up-form label {
     margin: 7px;
-    font-size: 20px;
+    font-size: 1.3rem;
     font-weight: 600;
 }
 
 .sign-up-submit{
     width: 150px !important;
     background: #64dfd3; 
-    font-size: 17px;
+    font-size: 1.1rem;
     font-weight: 600;
 }
 
@@ -66,13 +66,13 @@
 
 .message {
     font-style: italic;
-    font-size: 15px;
+    font-size: 0.9rem;
 }
 
 .message a {
     color: blue;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .logo {
@@ -83,7 +83,6 @@
 }
 
 .logo {
-    /* overflow: hidden; */
     transition-duration: 2s;
     transition-property: transform;
 }

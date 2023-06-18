@@ -14,7 +14,7 @@
 }
 
 .contacts-title {
-    font-size: 50px;
+    font-size: 3.1rem;
     color: white;
     -webkit-text-stroke: 3px #000;
     text-align: center;
@@ -47,7 +47,7 @@
 }
 
 .contacts-list-item i {
-    font-size: 32px;
+    font-size: 2rem;
     margin-right: 19px;
 }
 
@@ -56,5 +56,5 @@
 }
 .contacts-list-item-content p {
     margin-top: 2px;
-    font-size: 17px;
+    font-size: 1.1rem;
 }

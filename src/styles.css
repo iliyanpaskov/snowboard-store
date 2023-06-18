@@ -10,11 +10,10 @@ html {
 
 body {
     margin: 0;
-
 }
 
 * {
-    font-family: 'Roboto Condensed';
+    font-family: 'Roboto Condensed', serif;
 }
 
 h1,
@@ -23,6 +22,14 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Oswald';
+    font-family: 'Oswald',sans-serif;
 }
 
+/* @media all and (max-width: 1200px){
+    *{
+        font-family: 'Times New Roman', Times, serif !important;
+    }
+    html {
+        font-size: 66.6%;
+    }
+} */
