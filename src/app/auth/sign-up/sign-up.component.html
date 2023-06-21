@@ -1,23 +1,26 @@
 <section class="sign-up-wrapper">
     <section class="sign-up">
         <h1 class="sign-up-title">sign-up</h1>
-        <form action="" class="sign-up-form">
+
+        <form #signUpForm="ngForm" action="" class="sign-up-form">
             <label for="usename">Username</label>
-            <input id="usename" name="usename" type="text" placeholder="JonSnow" required>
+            <input id="usename" type="text" placeholder="JonSnow" ngModel name="usename" required> 
             <label for="password">Password</label>
-            <input id="password" name="password" type="password" placeholder="* * * * * * *" required>
+            <input id="password" type="password" placeholder="* * * * * * *" ngModel name="password" required>
             <label for="repassword">Re-Password</label>
-            <input id="repassword" name="repassword" type="password" placeholder="* * * * * * *" required>
+            <input id="repassword" type="password" placeholder="* * * * * * *" ngModel name="repassword" required>
             <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="jon.snow@gmail.com" required>
+            <input id="email" type="email" placeholder="jon.snow@gmail.com" ngModel name="email" required>
             <label for="phone">Phone</label>
-            <input id="phone" name="phone" type="phone" placeholder="847 111 2222" required>
+            <input id="phone" type="phone" placeholder="847 111 2222" ngModel name="phone" required>
             <label for="address">Delivery address</label>
-            <input id="address" name="address" type="text" placeholder="1200 Street St, Bensenville, IL 00000, USA" required>
+            <input id="address" type="text" placeholder="1200 Street St, Bensenville, IL 00000, USA" ngModel
+                name="address" required>
             <input type="submit" value="Sign Up" class="sign-up-submit">
         </form>
+        <!-- {{signUpForm.value | json}} -->
         <p class="message">
-            If you have an account Login <a href="/auth/login">here!</a>
+            If you have an account Login <a routerLink="/auth/login">here!</a>
         </p>
         <img class="logo" src="../../../assets/favicon.png" alt="logo">
     </section>

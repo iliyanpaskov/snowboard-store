@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -22,6 +23,10 @@ import { LogoutComponent } from './logout/logout.component';
   imports: [
     CommonModule,
     AuthRoutingModule,
+    FormsModule,
+  ],
+  exports: [
+    LoginComponent
   ]
 })
 export class AuthModule { }

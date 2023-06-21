@@ -1,10 +1,23 @@
 import { RouterModule, Routes } from "@angular/router";
 import { AllProductsComponent } from "./all-products/all-products.component";
+import { SnowboardsComponent } from "./snowboards/snowboards.component";
 
 const routes: Routes = [
     {
         path:"products",
-        component: AllProductsComponent,
+        children:[
+            {
+                path:'',
+                pathMatch:'full',
+                component: AllProductsComponent,
+            },
+            {
+                path:"snowboards",
+                pathMatch:"full",
+                component: SnowboardsComponent,
+            },
+
+        ]
     },
 ]
 

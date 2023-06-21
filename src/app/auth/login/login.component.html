@@ -1,15 +1,24 @@
 <section class="login-wrapper">
     <section class="login">
         <h1 class="login-title">Login</h1>
-        <form action="" class="login-form">
+
+        <form #loginForm="ngForm" (ngSubmit)="loginSubmitHandler(username,password,loginForm)" class="login-form">
             <label for="usename">Username</label>
-            <input id="usename" name="usename" type="text" placeholder="JonSnow" required>
+            <input #usernameInput="ngModel" id="usename"  type="text" placeholder="JonSnow" [(ngModel)]="username"  name="usename" required>  <!--  -->
+            <ng-container *ngIf="usernameInput.touched">
+                <p class="error" *ngIf="usernameInput.errors?.['required']">Username required!</p>
+            </ng-container>
             <label for="password">Password</label>
-            <input id="password" name="password" type="password" placeholder="* * * * * * *" required>
+            <input #passwordInput="ngModel" id="password" type="password" placeholder="* * * * * * *"  [(ngModel)]="password" name="password" minlength="5" required> <!--  -->
+            <ng-container *ngIf="passwordInput.touched">
+                <p class="error" *ngIf="passwordInput.errors?.['required']">Password required!</p>
+            </ng-container>
             <input type="submit" value="Login" class="login-submit">
         </form>
+        
+
         <p class="message">
-            If you don't have an account Sign Up <a href="/auth/signup">here!</a>
+            If you don't have an account Sign Up <a routerLink="/auth/signup">here!</a>
         </p>
         <img class="logo" src="../../../assets/favicon.png" alt="logo">
     </section>

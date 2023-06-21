@@ -9,6 +9,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthModule } from '../auth/auth.module';
+import { ProductsModule } from '../products/products.module';
 
 
 @NgModule({
@@ -23,9 +24,10 @@ import { AuthModule } from '../auth/auth.module';
   ],
   imports: [
     CommonModule,
-    AppRoutingModule,
     AuthModule,
+    ProductsModule,
     SharedModule,
+    AppRoutingModule,
   ],
   exports: [
     HeaderComponent,

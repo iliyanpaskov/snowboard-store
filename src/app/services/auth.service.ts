@@ -16,16 +16,20 @@ const headers = {
 
 
 export class AuthService {
-  
+
   isLoggedIn: boolean = false;
+  user: IUserLogin | null = null
 
   constructor(private httpClient: HttpClient) { }
 
   login(username: string, password: string) {
     const url: string = `${apiURL}/login?username=${username}&password=${password}`;
-    return this.httpClient.get<IUserLogin>(url, {
+    this.isLoggedIn = true
+    const data = this.httpClient.get<IUserLogin>(url, {
       headers: headers,
     })
+    console.log(data);
+    return data
   }
 
 }

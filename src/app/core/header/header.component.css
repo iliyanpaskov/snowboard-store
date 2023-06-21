@@ -16,14 +16,23 @@ header {
     justify-content: space-between;
 }
 
+.logo-wrapper {
+    position: relative;
+}
+
 .logo {
     overflow: hidden;
     transition-duration: 2s;
     transition-property: transform;
+    width: 110px;
 }
 .logo:hover {
     transform: rotate(360deg);
     -webkit-transform: rotate(360deg);
+}
+
+.user-welcome {
+    text-decoration: none;
 }
 
 .navigation-list {
@@ -63,6 +72,18 @@ header {
     display: flex;
 }
 
-img {
-    width: 110px;
+.user-welcome {
+    text-decoration: none;
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: capitalize;
+    color: aliceblue;
+    -webkit-text-stroke: 1px #000;
+    text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+    font-size: 1.7rem;
+    margin: 0;
+    width: 270px;
+    text-align: center;
 }

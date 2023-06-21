@@ -3,6 +3,7 @@
         <div class="navigation-list-wrapper">
             <a routerLink="/" class="logo-wrapper">
                 <img class="logo" src="../../../assets/favicon.png" alt="snowboard">
+                <h3 class="user-welcome" *ngIf="user">Welcome {{user?.username}}</h3>
             </a>
         </div>
 
@@ -54,7 +55,8 @@
                 </ul>
             </ng-template>
 
-            <ng-container *ngTemplateOutlet="isLoggedIn ?userTemplate :guestTemplate"> </ng-container>
+            <ng-container *ngTemplateOutlet="isLoggedIn ? userTemplate : guestTemplate"> </ng-container>
+            
 
         </div>
     </section>
