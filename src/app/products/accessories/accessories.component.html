@@ -1,0 +1,32 @@
+<section class="section">
+    <h1 class="section-title">Accessories</h1>
+    <div class="products-container">
+
+
+        <article class="product-card" *ngFor="let accessory of accessories">
+            <div class="product-card-inner">
+                <div class="product-card-image">
+                    <img src={{accessory.image}} alt="">
+                </div>
+                <div class="product-card-content">
+                    <div class="product-info">
+                        <h3>brand:</h3>
+                        <p>{{accessory.brand}}</p>
+                    </div>
+                    <div class="product-info">
+                        <h3>model:</h3>
+                        <p>{{accessory.model}}</p>
+                    </div>
+                    <div class="product-info">
+                        <h3>price:</h3>
+                        <p>${{accessory.price}}</p>
+                    </div>
+                    <div class="buttons">
+                        <a routerLink="">details</a>
+                        <a *ngIf="isLoggedIn" routerLink="">add to cart</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>

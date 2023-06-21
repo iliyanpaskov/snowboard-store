@@ -5,6 +5,7 @@ import { ProductsRoutingModule } from './products-routing.module';
 import { SnowboardsComponent } from './snowboards/snowboards.component';
 import { BootsComponent } from './boots/boots.component';
 import { BindingsComponent } from './bindings/bindings.component';
+import { AccessoriesComponent } from './accessories/accessories.component';
 
 
 
@@ -14,6 +15,7 @@ import { BindingsComponent } from './bindings/bindings.component';
     SnowboardsComponent,
     BootsComponent,
     BindingsComponent,
+    AccessoriesComponent,
   ],
   imports: [
     CommonModule,

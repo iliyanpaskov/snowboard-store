@@ -3,6 +3,7 @@ import { AllProductsComponent } from "./all-products/all-products.component";
 import { SnowboardsComponent } from "./snowboards/snowboards.component";
 import { BootsComponent } from "./boots/boots.component";
 import { BindingsComponent } from "./bindings/bindings.component";
+import { AccessoriesComponent } from "./accessories/accessories.component";
 
 const routes: Routes = [
     {
@@ -31,7 +32,7 @@ const routes: Routes = [
             {
                 path:"accessories",
                 pathMatch:"full",
-                component: SnowboardsComponent,
+                component: AccessoriesComponent,
             },
             {
                 path:"clothing",
