@@ -6,6 +6,7 @@ export interface IUserProfile {
   createdAt: string,
   updatedAt: string,
   objectId: string,
+  fullName:string,
 }
 
 // export interface IUserLogin {
@@ -24,6 +25,7 @@ export interface IUserLogin {
     address: string,
     createdAt: string,
     updatedAt: string,
+    fullName:string,
     ACL: object,
     sessionToken: string,
 }

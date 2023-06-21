@@ -1,23 +1,23 @@
 <div class="my-profile-wrapper">
     <section class="my-profile">
-        <h1 class="my-profile-greeting">hello, username</h1>
-        <p class="my-profile-user-id">client number: <br><span>8Z75rF9g</span></p>
+        <h1 class="my-profile-greeting">hello, {{user?.username}}</h1>
+        <p class="my-profile-user-id">client number: <br><span>{{user?.objectId}}</span></p>
         <section class="my-profile-content">
             <div class="my-profile-item">
                 <h2>name</h2>
-                <p>jon snow</p>
+                <p>{{user?.fullName}}</p>
             </div>
             <div class="my-profile-item">
                 <h2>email</h2>
-                <p>jonsnow@gmail.com</p>
+                <p>{{user?.email}}</p>
             </div>
             <div class="my-profile-item">
                 <h2>phone</h2>
-                <p>877 111 2222</p>
+                <p>{{user?.phone}}</p>
             </div>
             <div class="my-profile-item">
                 <h2>delivery address</h2>
-                <p>1200 street str ,Bensenville, il, 00000, USA</p>
+                <p>{{user?.address}}</p>
             </div>
         </section>
         <section>
