@@ -6,6 +6,7 @@ import { SnowboardsComponent } from './snowboards/snowboards.component';
 import { BootsComponent } from './boots/boots.component';
 import { BindingsComponent } from './bindings/bindings.component';
 import { AccessoriesComponent } from './accessories/accessories.component';
+import { ClothingComponent } from './clothing/clothing.component';
 
 
 
@@ -16,6 +17,7 @@ import { AccessoriesComponent } from './accessories/accessories.component';
     BootsComponent,
     BindingsComponent,
     AccessoriesComponent,
+    ClothingComponent,
   ],
   imports: [
     CommonModule,

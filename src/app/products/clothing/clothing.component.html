@@ -1,0 +1,32 @@
+<section class="section">
+    <h1 class="section-title">Clothing</h1>
+    <div class="products-container">
+
+
+        <article class="product-card" *ngFor="let product of clothing">
+            <div class="product-card-inner">
+                <div class="product-card-image">
+                    <img src={{product.image}} alt="">
+                </div>
+                <div class="product-card-content">
+                    <div class="product-info">
+                        <h3>brand:</h3>
+                        <p>{{product.brand}}</p>
+                    </div>
+                    <div class="product-info">
+                        <h3>model:</h3>
+                        <p>{{product.model}}</p>
+                    </div>
+                    <div class="product-info">
+                        <h3>price:</h3>
+                        <p>${{product.price}}</p>
+                    </div>
+                    <div class="buttons">
+                        <a routerLink="">details</a>
+                        <a *ngIf="isLoggedIn" routerLink="">add to cart</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
