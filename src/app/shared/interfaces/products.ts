@@ -7,4 +7,6 @@ export interface IProducts {
     createdAt: string,
     updatedAt: string,
     image: string,
+    year:string,
+    size:string
 }

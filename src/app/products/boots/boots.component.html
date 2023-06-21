@@ -1,25 +1,25 @@
 <section class="section">
-    <h1 class="section-title">Snowboards</h1>
+    <h1 class="section-title">Boots</h1>
     <div class="products-container">
 
 
-        <article class="product-card" *ngFor="let snowboard of snowboards">
+        <article class="product-card" *ngFor="let shoe of boots">
             <div class="product-card-inner">
                 <div class="product-card-image">
-                    <img src={{snowboard.image}} alt="snowboard">
+                    <img src={{shoe.image}} alt="snowboard">
                 </div>
                 <div class="product-card-content">
                     <div class="product-info">
                         <h3>brand:</h3>
-                        <p>{{snowboard.brand}}</p>
+                        <p>{{shoe.brand}}</p>
                     </div>
                     <div class="product-info">
                         <h3>model:</h3>
-                        <p>{{snowboard.model}}</p>
+                        <p>{{shoe.model}}</p>
                     </div>
                     <div class="product-info">
                         <h3>price:</h3>
-                        <p>${{snowboard.price}}</p>
+                        <p>${{shoe.price}}</p>
                     </div>
                     <div class="buttons">
                         <a routerLink="">details</a>
@@ -28,6 +28,5 @@
                 </div>
             </div>
         </article>
-
     </div>
 </section>
