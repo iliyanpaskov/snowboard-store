@@ -4,27 +4,28 @@ import { ProductsService } from 'src/app/services/products.service';
 import { IProducts } from 'src/app/shared/interfaces';
 
 @Component({
-  selector: 'app-boots',
-  templateUrl: './boots.component.html',
-  styleUrls: ['./boots.component.css']
+  selector: 'app-bindings',
+  templateUrl: './bindings.component.html',
+  styleUrls: ['./bindings.component.css']
 })
-export class BootsComponent implements OnInit {
+export class BindingsComponent implements OnInit {
 
-  constructor (private productsServices: ProductsService, private auth:AuthService) {}
+  constructor(private productsServices: ProductsService, private auth: AuthService) { }
 
-  boots: IProducts | any =[];
+  bindings: IProducts[] | any = [];
   isLoggedIn = this.auth.isLoggedIn;
 
-
   ngOnInit(): void {
-    this.productsServices.getProducts('boots').subscribe({
+    this.productsServices.getProducts('bindings').subscribe({
       next: (data) => {
-        this.boots = Object.values(data)[0]        
+        this.bindings = Object.values(data)[0]
       },
       error: (err) => {
         console.log(err);
-        
+
       }
     })
   }
 }
+
+

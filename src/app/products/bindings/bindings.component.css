@@ -1,0 +1,133 @@
+.section {
+    width: 100%;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 3.1rem;
+    color: white;
+    -webkit-text-stroke: 3px #000;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.products-container {
+    max-width: 1221px;
+    background-color: aliceblue;
+    margin: 25px auto 40px auto;
+    border-radius: 25px;
+    box-shadow: 3px 3px 17px 3px #837e7e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    display: grid;
+    gap: 1.4rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.product-card {
+    background: transparent;
+    width: 20rem;
+    height: 22rem;
+    perspective: 1000px;
+    border-radius: 15px;
+}
+
+.product-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.product-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.product-card:hover .product-card-inner {
+    transform: rotateY(180deg);
+    cursor: pointer;
+}
+
+.product-card-image,
+.product-card-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    box-shadow: 3px 3px 17px 3px #837e7e;
+
+}
+
+.product-card-image {
+    background-color: #bbb;
+    color: black;
+}
+
+.product-card-content {
+    background-color: #231F20;
+    color: aliceblue;
+    transform: rotateY(180deg);
+    height: 100%;
+}
+
+.product-info {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 15rem;
+    text-transform: capitalize;
+    font-style: italic;
+}
+
+.product-info h3 {
+    font-size: 1.4rem;
+}
+
+.product-info p {
+    font-size: 1.2rem;
+}
+
+.buttons {
+    position: fixed;
+    bottom: 10%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%);
+    text-transform: uppercase;
+}
+
+.buttons a {
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 7px 14px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 13px 2px #837e7e;
+    font-weight: 600;
+}
+
+.buttons a:nth-last-of-type(2) {
+    background: #6cc8bf;
+    color: #000;
+}
+
+.buttons a:nth-last-of-type(1) {
+    background: orange;
+    color: #000;
+}
+
+.buttons a:hover {
+    cursor: pointer;
+    background: #5d10eb;
+    color: #64dfd3;
+}

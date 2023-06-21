@@ -2,6 +2,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { AllProductsComponent } from "./all-products/all-products.component";
 import { SnowboardsComponent } from "./snowboards/snowboards.component";
 import { BootsComponent } from "./boots/boots.component";
+import { BindingsComponent } from "./bindings/bindings.component";
 
 const routes: Routes = [
     {
@@ -25,7 +26,7 @@ const routes: Routes = [
             {
                 path:"bindings",
                 pathMatch:"full",
-                component: SnowboardsComponent,
+                component: BindingsComponent,
             },
             {
                 path:"accessories",
