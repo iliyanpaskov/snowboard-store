@@ -15,11 +15,9 @@ export class HeaderComponent implements DoCheck {
 
   constructor(public auth: AuthService) { }
 
+
   ngDoCheck(): void {
     this.isLoggedIn = this.auth.isLoggedIn;
     this.user = this.auth.user;
   }
-
-
-
 }
