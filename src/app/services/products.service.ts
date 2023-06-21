@@ -14,14 +14,22 @@ const headers = {
   providedIn: 'root'
 })
 export class ProductsService {
+  
+  constructor(private http: HttpClient) { }
 
-  constructor(private http:HttpClient) { }
-
-  getProducts(productsGroupe:string) {
+  getProducts(productsGroupe: string) {
     const url: string = `${apiURL}/classes/${productsGroupe}`;
     const data = this.http.get<IProducts[]>(url, {
       headers: headers,
     })
-    return data
+    return data;
+  }
+
+  getSingleProduct(productsGroupe: string, id: string | number) {
+    const url: string = `${apiURL}/classes/${productsGroupe}/${id}`;
+    const data = this.http.get<IProducts[]>(url, {
+      headers: headers,
+    })
+    return data;
   }
 }

@@ -17,12 +17,11 @@ export class BindingsComponent implements OnInit {
 
   ngOnInit(): void {
     this.productsServices.getProducts('bindings').subscribe({
-      next: (data) => {
+      next: (data:IProducts[]): void => {
         this.bindings = Object.values(data)[0]
       },
       error: (err) => {
         console.log(err);
-
       }
     })
   }

@@ -17,12 +17,11 @@ export class AccessoriesComponent implements OnInit{
 
   ngOnInit(): void {
     this.productsServices.getProducts('accessories').subscribe({
-      next: (data) => {
-        this.accessories = Object.values(data)[0]
+      next: (data:IProducts[]): void => {
+        this.accessories = Object.values(data)[0];
       },
       error: (err) => {
         console.log(err);
-
       }
     })
   }

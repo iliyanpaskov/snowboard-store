@@ -5,6 +5,7 @@ import { BootsComponent } from "./boots/boots.component";
 import { BindingsComponent } from "./bindings/bindings.component";
 import { AccessoriesComponent } from "./accessories/accessories.component";
 import { ClothingComponent } from "./clothing/clothing.component";
+import { SnowboardDetailsComponent } from "./snowboard-details/snowboard-details.component";
 
 const routes: Routes = [
     {
@@ -40,6 +41,11 @@ const routes: Routes = [
                 pathMatch:"full",
                 component: ClothingComponent,
             },
+            {
+                path:"snowboards/:id",
+                component:SnowboardDetailsComponent
+            }
+           
 
         ]
     },

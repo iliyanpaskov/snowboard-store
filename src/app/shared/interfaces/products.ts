@@ -8,5 +8,6 @@ export interface IProducts {
     updatedAt: string,
     image: string,
     year:string,
-    size:string
+    size:string,
+    category:string,
 }
