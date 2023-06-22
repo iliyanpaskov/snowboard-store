@@ -18,7 +18,6 @@ export class SnowboardsComponent implements OnInit {
     this.productsServices.getProducts('snowboards').subscribe({
       next: (data:IProducts[]): void => {
         this.snowboards = Object.values(data)[0];
-        console.log(this.snowboards);
       },
       error: (err) => {
         console.log(err);

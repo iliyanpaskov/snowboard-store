@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 import { ProductsService } from 'src/app/services/products.service';
@@ -13,9 +14,12 @@ export class SnowboardDetailsComponent implements OnInit {
   id: any = null;
   currentProduct: IProducts[] | any = [];
 
-  constructor(private activeRoute: ActivatedRoute, private productsService: ProductsService) {
+  constructor(private activeRoute: ActivatedRoute, private productsService: ProductsService, private _location:Location) {
     this.id = this.activeRoute.snapshot.params
-    console.log(this.id.id);
+  }
+
+  goBack(){
+    this._location.back();
   }
 
 
@@ -23,7 +27,6 @@ export class SnowboardDetailsComponent implements OnInit {
     this.productsService.getSingleProduct('snowboards', this.id.id).subscribe({
       next: (data: IProducts[]): void => {
         this.currentProduct = data
-        console.log(this.currentProduct);
       },
       error: (err) => {
         console.log(err);

@@ -26,7 +26,7 @@
     display: flex;
     align-items: center;
     padding: 0 2rem;
-    background: #231f20af;
+    background: #231f20c0;
     justify-content: space-between;
     align-items: center;
     border-radius: 15px;
@@ -92,4 +92,32 @@
 .date {
     font-size: 1.2rem;
     font-style: italic;
+}
+
+.button-wrapper {
+    position: absolute;
+    inset: 93% 50%;
+    transform: translate(-50%, -50%);
+    width: 10rem;
+
+}
+
+.button-wrapper button {
+   background: #64DFD3;
+   width: 100%;
+   text-transform: uppercase;
+   padding: 0.5rem 1rem;
+   font-size: 1.1rem;
+   border: none;
+   border-radius: 15px;
+   font-weight: 600;
+   box-shadow: 0 0 5px 1px white;
+}
+
+.button-wrapper button:hover {
+        cursor: pointer;
+        transition: transform .5s ease;
+        transform: scale(1.15);
+        background: #000;
+        color: #64dfd3;
 }
