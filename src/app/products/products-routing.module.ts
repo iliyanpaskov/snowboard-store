@@ -8,6 +8,7 @@ import { ClothingComponent } from "./clothing/clothing.component";
 import { SnowboardDetailsComponent } from "./snowboard-details/snowboard-details.component";
 import { BootsDetailsComponent } from "./boots-details/boots-details.component";
 import { BindingsDetailsComponent } from "./bindings-details/bindings-details.component";
+import { ClothingDetailsComponent } from "./clothing-details/clothing-details.component";
 
 const routes: Routes = [
     {
@@ -54,6 +55,10 @@ const routes: Routes = [
             {
                 path:"bindings/:id",
                 component:BindingsDetailsComponent
+            },
+            {
+                path:"clothing/:id",
+                component:ClothingDetailsComponent
             },
            
 
