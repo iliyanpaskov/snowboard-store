@@ -2,23 +2,52 @@
     <section class="sign-up">
         <h1 class="sign-up-title">sign-up</h1>
 
-        <form #signUpForm="ngForm" action="" class="sign-up-form">
-            <label for="usename">Username</label>
-            <input id="usename" type="text" placeholder="JonSnow" ngModel name="usename" required> 
+        <form #signupForm="ngForm" (ngSubmit)="signupHandler(signupForm)" class="sign-up-form">
+            <label for="username">Username</label>
+            <input #username="ngModel" id="username" type="text" placeholder="JonSnow" ngModel name="username" [minlength]="5" required> 
+            <ng-container *ngIf="username.touched">
+                <p class="error" *ngIf="username.errors?.['required']">Username required!</p>
+                <p class="error" *ngIf="username.errors?.['minlength']">Username needs to be at least 5 characters!</p>
+
+            </ng-container>
+
             <label for="password">Password</label>
-            <input id="password" type="password" placeholder="* * * * * * *" ngModel name="password" required>
-            <label for="repassword">Re-Password</label>
-            <input id="repassword" type="password" placeholder="* * * * * * *" ngModel name="repassword" required>
+            <input #password="ngModel" id="password" type="password" placeholder="* * * * * * *" ngModel name="password" [minlength]="6" required>
+            <ng-container *ngIf="password.touched">
+                <p class="error" *ngIf="password.errors?.['required']">Password required!</p>
+                <p class="error" *ngIf="password.errors?.['minlength']">Password needs to be at least 6 characters!</p>
+            </ng-container>
+
+            <label for="fullName">Full name</label>
+            <input #fullName="ngModel" id="fullName" type="text" placeholder="Jon Snow" ngModel name="fullName" required>
+            <ng-container *ngIf="fullName.touched">
+                <p class="error" *ngIf="fullName.errors?.['required']">Full name required!</p>
+            </ng-container>
+
             <label for="email">Email</label>
-            <input id="email" type="email" placeholder="jon.snow@gmail.com" ngModel name="email" required>
+            <input #email="ngModel" id="email" type="email" placeholder="jon.snow@gmail.com" ngModel name="email" email required>
+            <ng-container *ngIf="email.touched">
+                <p class="error" *ngIf="email.errors?.['required']">Email required!</p>
+                <p class="error" *ngIf="email.errors?.['email']">Invalid email!</p>
+            </ng-container>
+
             <label for="phone">Phone</label>
-            <input id="phone" type="phone" placeholder="847 111 2222" ngModel name="phone" required>
+            <input #phone="ngModel" id="phone" type="tel" placeholder="847 111 2222" ngModel name="phone" [minlength]="10" required>
+            <ng-container *ngIf="phone.touched">
+                <p class="error" *ngIf="phone.errors?.['required']">Phone number required!</p>
+                <p class="error" *ngIf="phone.errors?.['minlength']">Invalid phone number!</p>
+            </ng-container>
+
             <label for="address">Delivery address</label>
-            <input id="address" type="text" placeholder="1200 Street St, Bensenville, IL 00000, USA" ngModel
-                name="address" required>
+            <input #address="ngModel" id="address" type="text" placeholder="1200 Street St, Bensenville, IL 00000, USA" ngModel name="address" [minlength]="10" required>
+            <ng-container *ngIf="address.touched">
+                <p class="error" *ngIf="address.errors?.['required']">Address required!</p>
+                <p class="error" *ngIf="address.errors?.['minlength']">Please give us more details for you address!</p>
+            </ng-container>
+
             <input type="submit" value="Sign Up" class="sign-up-submit">
         </form>
-        <!-- {{signUpForm.value | json}} -->
+        <!-- {{signupForm.value | json}} -->
         <p class="message">
             If you have an account Login <a routerLink="/auth/login">here!</a>
         </p>

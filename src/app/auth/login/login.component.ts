@@ -24,14 +24,12 @@ export class LoginComponent {
             next: (res) => {
                 this.auth.user = (res);
                 this.auth.isLoggedIn = true; 
-                // this.isLoggedIn = true;
-                
-                // console.log(res);
                 console.log(this.auth.user);
                 console.log(this.auth.isLoggedIn);
             },
             error: (err) => {
                 console.log(err);
+                this.auth.isLoggedIn = false; 
             }
         })
         form.reset();
