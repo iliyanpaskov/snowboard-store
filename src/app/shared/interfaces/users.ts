@@ -7,6 +7,8 @@ export interface IUserProfile {
   updatedAt: string,
   objectId: string,
   fullName: string,
+  sessionToken: string,
+  orders?:Object[]
 }
 
 export interface IUserLogin {
@@ -20,4 +22,5 @@ export interface IUserLogin {
   fullName: string,
   ACL: object,
   sessionToken: string,
+  orders?:Object[]
 }

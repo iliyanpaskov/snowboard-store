@@ -57,9 +57,6 @@ export class AuthService {
       } else {
         throw data.error;
       }
-      // else if (data.status !== 200){
-      //   tr
-      // }
     } catch (error) {
       console.log(error);
     }
@@ -92,8 +89,28 @@ export class AuthService {
   }
 
 
-  deleteUser() {
-
+  async deleteUser(id: string, token: string) {
+    const url = `${signupURL}/${id}`
+    try {
+      const res = await fetch(url,{
+        method:"DELETE",
+        headers:{
+          'X-Parse-Application-Id': environment.applicationId,
+          'X-Parse-REST-API-Key': environment.apiKey,
+          'X-Parse-Session-Token': token,
+          'Content-Type': environment.contentType
+        }
+      })
+      const data = await res.json();
+      if (!data.error) {
+        return data
+      } else {
+        throw data.error
+      }
+    } catch (error) {
+      console.log(error);
+      
+    }
   }
 
 }

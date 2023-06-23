@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { IUserProfile } from 'src/app/shared/interfaces';
 
@@ -9,16 +10,28 @@ import { IUserProfile } from 'src/app/shared/interfaces';
 })
 export class ProfileComponent implements OnInit {
 
-  currentUser:IUserProfile | null = null;  
-  token:any = this.auth.user?.sessionToken 
+  currentUser: IUserProfile | undefined = undefined;
+  token: any = this.auth.user?.sessionToken
 
-  constructor(private auth: AuthService) { }
-  
+  constructor(private auth: AuthService, private router: Router) { }
+
+  deleteHandler(id:any, sessionToken: any) {
+    const res = async () => {
+      const delData = await this.auth.deleteUser(id, sessionToken)
+      this.currentUser = undefined;
+    }
+    res();
+    this.auth.isLoggedIn = false;
+    this.auth.user = null
+    this.router.navigate(['/'])
+  }
+
+
 
   ngOnInit(): void {
     console.log(this.token);
-    
-    const userData =async () => {
+
+    const userData = async () => {
       const res = await this.auth.currentUser(this.token)
       this.currentUser = res;
     }
