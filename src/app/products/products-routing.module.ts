@@ -7,6 +7,7 @@ import { AccessoriesComponent } from "./accessories/accessories.component";
 import { ClothingComponent } from "./clothing/clothing.component";
 import { SnowboardDetailsComponent } from "./snowboard-details/snowboard-details.component";
 import { BootsDetailsComponent } from "./boots-details/boots-details.component";
+import { BindingsDetailsComponent } from "./bindings-details/bindings-details.component";
 
 const routes: Routes = [
     {
@@ -49,6 +50,10 @@ const routes: Routes = [
             {
                 path:"boots/:id",
                 component:BootsDetailsComponent
+            },
+            {
+                path:"bindings/:id",
+                component:BindingsDetailsComponent
             },
            
 

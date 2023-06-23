@@ -1,0 +1,45 @@
+<section class="details-container">
+    <img src="../../../assets/bindings-details.jpg" alt="img">
+    <section class="details">
+    
+            <article class="details-image-wrapper">
+                <img src={{currentProduct.image}} alt="image">
+            </article>
+
+       
+        <article class="details-content-wrapper">
+            <div class="details-content">
+                <h3>Brand</h3>
+                <p>{{currentProduct.brand}}</p>
+            </div>
+            <div class="details-content">
+                <h3>Model</h3>
+                <p>{{currentProduct.model}}</p>
+            </div>
+            <div class="details-content">
+                <h3>price</h3>
+                <p>$ {{currentProduct.price}}</p>
+            </div>
+            <div class="details-content">
+                <h3>year</h3>
+                <p>{{currentProduct.year}}</p>
+            </div>
+            <div class="details-content">
+                <h3>size</h3>
+                <p>{{currentProduct.size}}</p>
+            </div>
+            <div class="details-content">
+                <h3>description</h3>
+                <p>{{currentProduct.description}}</p>
+            </div>
+        </article>
+        <div class="button-wrapper">
+            <button (click)="goBack()">go back</button>
+        </div>
+      
+        <div class="date-container">
+            <h3>Added at:</h3>
+            <p class="date">{{currentProduct.createdAt | date }}</p>
+        </div>
+    </section>
+</section>
