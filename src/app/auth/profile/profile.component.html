@@ -1,31 +1,35 @@
 <div class="my-profile-wrapper">
     <section class="my-profile">
-        <h1 class="my-profile-greeting">hello, {{user?.username}}</h1>
+        <h1 class="my-profile-greeting">hello, {{currentUser?.username}}</h1>
+        <p class="my-profile-user-id">Your personal identification number is <br><span>{{currentUser?.objectId}}</span> </p>
         <section class="my-profile-content">
             <div class="my-profile-item">
                 <h2>name</h2>
-                <p>{{user?.fullName}}</p>
+                <p>{{currentUser?.fullName}}</p>
             </div>
             <div class="my-profile-item">
                 <h2>email</h2>
-                <p>{{user?.email}}</p>
+                <p>{{currentUser?.email}}</p>
             </div>
             <div class="my-profile-item">
                 <h2>phone</h2>
-                <p>{{user?.phone}}</p>
+                <p>{{currentUser?.phone}}</p>
             </div>
             <div class="my-profile-item">
                 <h2>delivery address</h2>
-                <p>{{user?.address}}</p>
+                <p>{{currentUser?.address}}</p>
             </div>
         </section>
         <section>
             <ul class="my-profile-buttons-list">
                 <li>
-                    <a class="my-profile-button" href="/auth/my-orders">my orders</a>
+                    <a class="my-profile-button" href="auth/my-orders">my orders</a>
                 </li>
                 <li>
                     <a class="my-profile-button" href="auth/profile-update">profile update</a>
+                </li>
+                <li>
+                    <button class="my-profile-button delete-button">Delete</button>
                 </li>
             </ul>
         </section>

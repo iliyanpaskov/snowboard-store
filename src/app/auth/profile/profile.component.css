@@ -35,12 +35,19 @@
     font-size: 1.5rem;
 }
 
+.my-profile-user-id span {
+    font-size: 1.7rem;
+    font-weight: 900;
+    letter-spacing: 0.5rem;
+    color: #64dfd3;
+    -webkit-text-stroke: 1px #000;
+}
 
 .my-profile-buttons-list {
     display: flex;
     padding: 0;
     list-style: none;
-    width: 250px;
+    width: 400px;
     align-items: center;
     justify-content: space-between;
     margin: 29px;
@@ -65,12 +72,18 @@
     transform: scale(1.15);
     background: #000;
     color: #64dfd3;
+    border-radius: 20px;
 }
 
 .my-profile-button:hover {
     cursor: pointer;
     transition: transform .5s ease;
-    transform: scale(1.15);
+    transform: scale(1.1);
     background: #000;
     color: #64dfd3;
+}
+
+.delete-button:hover {
+    background: red;
+    color: #000;
 }

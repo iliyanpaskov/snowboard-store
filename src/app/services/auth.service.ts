@@ -38,35 +38,62 @@ export class AuthService {
     return data
   }
 
-  signUp(username: string, password: string, email: string, address: string, fullName: string, phone: string) {
-    fetch(signupURL, {
-      method: "POST",
-      headers: headers,
-      body: JSON.stringify({
-        username,
-        password,
-        email,
-        address,
-        fullName,
-        phone,
-      })
-    })
-      .then((res) => {
-        if(res.status ===201){
-          res.json()
-        }else {
-          throw new Error
+
+
+  async currentUser(sessionToken: string) {
+    const url = `${signupURL}/me`;
+    try {
+      const res = await fetch(url, {
+        method: "GET",
+        headers: {
+          'X-Parse-Application-Id': environment.applicationId,
+          'X-Parse-REST-API-Key': environment.apiKey,
+          'X-Parse-Session-Token': sessionToken,
         }
       })
-      .then((data) => {
-        this.isLoggedIn = true;
+      const data = await res.json();
+      if (!data.error) {
+        return data;
+      } else {
+        throw data.error;
+      }
+      // else if (data.status !== 200){
+      //   tr
+      // }
+    } catch (error) {
+      console.log(error);
+    }
+
+  }
+
+  async signUp(username: string, password: string, email: string, address: string, fullName: string, phone: string) {
+    try {
+      const res = await fetch(signupURL, {
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify({
+          username,
+          password,
+          email,
+          address,
+          fullName,
+          phone,
+        })
+      });
+      const data = await res.json();
+      if (!data.error) {
         return data
-      })
-      .catch((err) => {
-        console.log(err);
-        this.isLoggedIn = false;
-        this.user = null;
-      })
+      } else {
+        throw data.error
+      }
+    } catch (error) {
+
+    }
+  }
+
+
+  deleteUser() {
+
   }
 
 }

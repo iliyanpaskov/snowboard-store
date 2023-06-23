@@ -17,12 +17,15 @@ export class SignUpComponent {
     signupHandler(signupForm: NgForm,) { //void?
         if (signupForm.invalid) { return };
         const { username, password, email, address, fullName, phone } = signupForm.value;
-        
-           this.auth.signUp(username, password, email, address, fullName, phone)
-           this.auth.isLoggedIn = true;
-           this.auth.user = signupForm.value;
-           this.router.navigate(['/']);
-
+        const res = async () => {
+            let res = await this.auth.signUp(username, password, email, address, fullName, phone)
+            this.auth.isLoggedIn = true;
+            this.auth.user = res;
+            console.log(res);
+            console.log(this.auth.user);
+        }
+        res()
+        this.router.navigate(['/']);
     }
 
 
