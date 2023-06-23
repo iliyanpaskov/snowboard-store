@@ -33,8 +33,6 @@ export class AuthService {
       headers: headers,
     })
     console.log(data);
-    // console.log(this.user);
-
     return data
   }
 
@@ -92,9 +90,9 @@ export class AuthService {
   async deleteUser(id: string, token: string) {
     const url = `${signupURL}/${id}`
     try {
-      const res = await fetch(url,{
-        method:"DELETE",
-        headers:{
+      const res = await fetch(url, {
+        method: "DELETE",
+        headers: {
           'X-Parse-Application-Id': environment.applicationId,
           'X-Parse-REST-API-Key': environment.apiKey,
           'X-Parse-Session-Token': token,
@@ -109,7 +107,39 @@ export class AuthService {
       }
     } catch (error) {
       console.log(error);
-      
+
+    }
+  }
+
+
+  async updateUser(id: string, token: string,username:string, email:string, address:string, fullName:string, phone:string ) {
+    const url = `${signupURL}/${id}`
+    try {
+      const res = await fetch(url, {
+        method: "PUT",
+        headers: {
+          'X-Parse-Application-Id': environment.applicationId,
+          'X-Parse-REST-API-Key': environment.apiKey,
+          'X-Parse-Session-Token': token,
+          'Content-Type': environment.contentType
+        },
+        body: JSON.stringify({
+          username,
+          email,
+          address,
+          fullName,
+          phone,
+        })
+      })
+      const data = await res.json();
+      if (!data.error) {
+        return data
+      } else {
+        throw data.error
+      }
+    } catch (error) {
+      console.log(error);
+
     }
   }
 

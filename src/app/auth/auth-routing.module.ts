@@ -24,12 +24,6 @@ const routes: Routes = [
     {
         path: 'auth/my-profile',
         component: ProfileComponent,
-        // children:[
-        //     {
-        //         path:'update',
-        //         component:UpdateProfileComponent
-        //     }
-        // ]
     },
     {
         path: 'profile-update',

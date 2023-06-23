@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { IUserProfile } from 'src/app/shared/interfaces';
 
@@ -12,8 +14,19 @@ export class UpdateProfileComponent implements OnInit {
     currentUser: IUserProfile | undefined = undefined;
     token: any = this.auth.user?.sessionToken;
 
-    constructor(private auth: AuthService) { }
+    constructor(private auth: AuthService, private router: Router) { }
 
+    updateHandler(id: any, sessionToken: any, updateForm: NgForm) {
+        if (updateForm.invalid) { return };
+        const { username, email, address, fullName, phone } = updateForm.value;
+        const res = async () => {
+            const update = await this.auth.updateUser(id, sessionToken,username, email, address, fullName, phone )
+            this.currentUser = update;
+        }
+        res();
+        this.auth.user = updateForm.value
+        this.router.navigate(['/']);
+    }
 
 
 
@@ -21,7 +34,7 @@ export class UpdateProfileComponent implements OnInit {
         const loadForm = async () => {
             console.log(this.token);
             console.log(this.auth.user);
-            
+
             const user = await this.auth.currentUser(this.token);
             this.currentUser = user;
         }

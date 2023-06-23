@@ -64,17 +64,6 @@
     color: #64dfd3;
 }
 
-.message {
-    font-style: italic;
-    font-size: 0.9rem;
-}
-
-.message a {
-    color: blue;
-    font-weight: 600;
-    font-size: 1rem;
-}
-
 .logo {
     position: absolute;
     width: 80px;
