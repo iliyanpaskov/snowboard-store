@@ -22,7 +22,7 @@
                         <p>${{accessory.price}}</p>
                     </div>
                     <div class="buttons">
-                        <a routerLink="">details</a>
+                        <a routerLink={{accessory.objectId}}>details</a>
                         <a *ngIf="isLoggedIn" routerLink="">add to cart</a>
                     </div>
                 </div>

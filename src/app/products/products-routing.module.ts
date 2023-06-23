@@ -9,6 +9,7 @@ import { SnowboardDetailsComponent } from "./snowboard-details/snowboard-details
 import { BootsDetailsComponent } from "./boots-details/boots-details.component";
 import { BindingsDetailsComponent } from "./bindings-details/bindings-details.component";
 import { ClothingDetailsComponent } from "./clothing-details/clothing-details.component";
+import { AccessoriesDetailsComponent } from "./accessories-details/accessories-details.component";
 
 const routes: Routes = [
     {
@@ -59,6 +60,10 @@ const routes: Routes = [
             {
                 path:"clothing/:id",
                 component:ClothingDetailsComponent
+            },
+            {
+                path:"accessories/:id",
+                component:AccessoriesDetailsComponent
             },
            
 
