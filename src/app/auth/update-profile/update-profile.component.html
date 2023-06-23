@@ -1,0 +1,47 @@
+<section class="profile-wrapper">
+    <section class="profile">
+        <h1 class="profile-title">profile update</h1>
+
+        <form #signupForm="ngForm"  class="profile-form">
+            <label for="username">Username</label>
+            <input #username="ngModel" id="username" type="text" placeholder="JonSnow" ngModel name="username" [minlength]="5" value={{currentUser?.username}} required> 
+            <ng-container *ngIf="username.touched">
+                <p class="error" *ngIf="username.errors?.['required']">Username required!</p>
+                <p class="error" *ngIf="username.errors?.['minlength']">Username needs to be at least 5 characters!</p>
+            </ng-container>
+
+            <label for="fullName">Full name</label>
+            <input #fullName="ngModel" id="fullName" type="text" placeholder="Jon Snow" ngModel name="fullName" value={{currentUser?.fullName}} required>
+            <ng-container *ngIf="fullName.touched">
+                <p class="error" *ngIf="fullName.errors?.['required']">Full name required!</p>
+            </ng-container>
+
+            <label for="email">Email</label>
+            <input #email="ngModel" id="email" type="email" placeholder="jon.snow@gmail.com" ngModel name="email" email value={{currentUser?.email}} required>
+            <ng-container *ngIf="email.touched">
+                <p class="error" *ngIf="email.errors?.['required']">Email required!</p>
+                <p class="error" *ngIf="email.errors?.['email']">Invalid email!</p>
+            </ng-container>
+
+            <label for="phone">Phone</label>
+            <input #phone="ngModel" id="phone" type="tel" placeholder="847 111 2222" ngModel name="phone" [minlength]="10" value={{currentUser?.phone}} required>
+            <ng-container *ngIf="phone.touched">
+                <p class="error" *ngIf="phone.errors?.['required']">Phone number required!</p>
+                <p class="error" *ngIf="phone.errors?.['minlength']">Invalid phone number!</p>
+            </ng-container>
+
+            <label for="address">Delivery address</label>
+            <input #address="ngModel" id="address" type="text" placeholder="1200 Street St, Bensenville, IL 00000, USA" ngModel name="address" [minlength]="10" value={{currentUser?.address}} required>
+            <ng-container *ngIf="address.touched">
+                <p class="error" *ngIf="address.errors?.['required']">Address required!</p>
+                <p class="error" *ngIf="address.errors?.['minlength']">Please give us more details for you address!</p>
+            </ng-container>
+
+            <input type="submit" value="Update" class="profile-submit">
+        </form>
+        <p class="message">
+            If you have an account Login <a routerLink="/auth/login">here!</a>
+        </p>
+        <img class="logo" src="../../../assets/favicon.png" alt="logo">
+    </section>
+</section>

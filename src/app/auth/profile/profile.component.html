@@ -23,10 +23,10 @@
         <section>
             <ul class="my-profile-buttons-list">
                 <li>
-                    <a class="my-profile-button" href="auth/my-orders">my orders</a>
+                    <a class="my-profile-button" routerLink="auth/my-orders">my orders</a>
                 </li>
                 <li>
-                    <a class="my-profile-button" href="auth/profile-update">profile update</a>
+                    <a class="my-profile-button" routerLink="/profile-update">profile update</a>
                 </li>
                 <li>
                     <button (click)="deleteHandler(currentUser?.objectId,currentUser?.sessionToken)" class="my-profile-button delete-button">Delete</button>

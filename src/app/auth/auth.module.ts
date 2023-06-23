@@ -8,6 +8,7 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { OrdersComponent } from './orders/orders.component';
 import { CartComponent } from './cart/cart.component';
 import { LogoutComponent } from './logout/logout.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
 
 
 
@@ -19,6 +20,7 @@ import { LogoutComponent } from './logout/logout.component';
     OrdersComponent,
     CartComponent,
     LogoutComponent,
+    UpdateProfileComponent,
   ],
   imports: [
     CommonModule,
@@ -26,7 +28,8 @@ import { LogoutComponent } from './logout/logout.component';
     FormsModule,
   ],
   exports: [
-    LoginComponent
+    LoginComponent,
+    SignUpComponent,
   ]
 })
 export class AuthModule { }
