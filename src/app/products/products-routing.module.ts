@@ -6,6 +6,7 @@ import { BindingsComponent } from "./bindings/bindings.component";
 import { AccessoriesComponent } from "./accessories/accessories.component";
 import { ClothingComponent } from "./clothing/clothing.component";
 import { SnowboardDetailsComponent } from "./snowboard-details/snowboard-details.component";
+import { BootsDetailsComponent } from "./boots-details/boots-details.component";
 
 const routes: Routes = [
     {
@@ -44,7 +45,11 @@ const routes: Routes = [
             {
                 path:"snowboards/:id",
                 component:SnowboardDetailsComponent
-            }
+            },
+            {
+                path:"boots/:id",
+                component:BootsDetailsComponent
+            },
            
 
         ]
