@@ -11,7 +11,7 @@ export class OrdersService {
   totalPrice: number = 0;
   constructor() { }
 
-  addToCart(product:CartProduct){
+  addToCart(product: CartProduct) {
     this.ordersList.push(product);
     this.counter = this.ordersList.length;
     this.totalPrice = 0;
@@ -20,5 +20,20 @@ export class OrdersService {
     })
   }
 
+  removeFromCart(id: string) {
+    this.ordersList = this.ordersList.filter(product => product.objectId !== id);
+    // const index = Object.values(this.ordersList).indexOf(id);
+    // console.log(index);
+    // const firstPart = this.ordersList.slice(0, index);
+    // const secondPart = this.ordersList.slice(index);
+    // this.ordersList = firstPart.concat(secondPart)
+    // this.ordersList = this.ordersList.splice(index, 1)
+
+    this.counter = this.ordersList.length;
+    this.totalPrice = 0;
+    this.ordersList.forEach(product => {
+      this.totalPrice += Number(product.price);
+    })
+  }
 
 }

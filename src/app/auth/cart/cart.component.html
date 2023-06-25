@@ -12,13 +12,13 @@
                     <h4>Model: <span>{{product.model}}</span></h4>
                     <p>Price: <span>${{product.price}}</span></p>
                 </div>
-                    <button class="remove-button"><i class="fa-solid fa-xmark"></i></button>
+                    <button (click)="removeHandler(product.objectId)" class="remove-button"><i class="fa-solid fa-xmark"></i></button>
             </article>
 
         </section>
         <section class="total-section">
                 <p>Total: ${{totalPrice}}</p>
-                <button>Buy now <i class="fa-solid fa-cart-shopping"></i></button>
+                <button >Buy now <i class="fa-solid fa-cart-shopping"></i></button>
         </section>
         
     </div>

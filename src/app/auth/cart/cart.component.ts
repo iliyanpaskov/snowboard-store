@@ -1,4 +1,4 @@
-import { Component, OnChanges, SimpleChanges } from '@angular/core';
+import { Component,DoCheck } from '@angular/core';
 import { OrdersService } from 'src/app/services/orders.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { OrdersService } from 'src/app/services/orders.service';
     templateUrl: './cart.component.html',
     styleUrls: ['./cart.component.css']
 })
-export class CartComponent implements OnChanges {
+export class CartComponent implements DoCheck {
 
     
     constructor (private orders:OrdersService ) {}
@@ -14,10 +14,14 @@ export class CartComponent implements OnChanges {
     cartProducts = this.orders.ordersList;
     totalPrice= this.orders.totalPrice;
     
+    removeHandler(id:string){
+        this.orders.removeFromCart(id)
+    }
     
     
-    ngOnChanges(changes: SimpleChanges): void {
-        throw new Error('Method not implemented.');
+    ngDoCheck(): void {
+        this.cartProducts = this.orders.ordersList;
+        this.totalPrice= this.orders.totalPrice;
     }
 
 }
