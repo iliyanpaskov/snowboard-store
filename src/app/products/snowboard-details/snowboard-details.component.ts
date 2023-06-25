@@ -18,7 +18,7 @@ export class SnowboardDetailsComponent implements OnInit {
         this.id = this.activeRoute.snapshot.params;
     }
 
-    goBack() {
+    goBack(): void {
         this._location.back();
     }
 

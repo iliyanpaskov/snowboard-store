@@ -11,7 +11,7 @@ export class OrdersService {
   totalPrice: number = 0;
   constructor() { }
 
-  addToCart(product: CartProduct) {
+  addToCart(product: CartProduct): void {
     this.ordersList.push(product);
     this.counter = this.ordersList.length;
     this.totalPrice = 0;
@@ -20,7 +20,7 @@ export class OrdersService {
     })
   }
 
-  removeFromCart(id: string) {
+  removeFromCart(id: string): void {
     this.ordersList = this.ordersList.filter(product => product.objectId !== id);
     // const index = Object.values(this.ordersList).indexOf(id);
     // console.log(index);

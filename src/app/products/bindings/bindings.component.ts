@@ -16,7 +16,7 @@ export class BindingsComponent implements OnInit {
   bindings: IProducts[] | any = [];
   isLoggedIn = this.auth.isLoggedIn;
 
-  cartAddHandler(objectId: string, image: string, brand: string, model: string, price: string | number,) {
+  cartAddHandler(objectId: string, image: string, brand: string, model: string, price: string | number,): void {
     this.cart.addToCart({ objectId, image, brand, model, price })
   }
 

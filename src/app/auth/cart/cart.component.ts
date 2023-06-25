@@ -14,7 +14,7 @@ export class CartComponent implements DoCheck {
     cartProducts = this.orders.ordersList;
     totalPrice= this.orders.totalPrice;
     
-    removeHandler(id:string){
+    removeHandler(id:string): void{
         this.orders.removeFromCart(id)
     }
     
