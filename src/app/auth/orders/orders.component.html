@@ -1,1 +1,32 @@
-<p>orders works!</p>
+<section   class="orders-wrapper">
+    <section class="orders">
+        <h1 class="orders-title">your orders</h1>
+        <ng-template #orders>
+            <ul class="orders-list">
+                <li class="orders-list-item" *ngFor="let order of currentUserOrders">
+                    <div class="orders-list-item-image-wrapper">
+                        <img src={{order.image}} alt="">
+                    </div>
+                    <div class="orders-list-item-content-wrapper">
+                        <h2>{{order.brand}}</h2>
+                        <p>{{order.model}}</p>
+                        <p>${{order.price}}</p>
+                    </div>
+                    <button>Cancel order</button>
+                    
+                </li>
+            </ul>
+        </ng-template>
+
+        <ng-template #noOrders>
+            <section class="no-orders">
+                <h1 class="no-orders-title">no orders yet!</h1>
+                <p class="no-orders-text">let's start <a routerLink="/products">shopping!</a></p>
+            </section>
+            </ng-template>
+
+        <ng-container *ngTemplateOutlet="currentUserOrders ? orders : noOrders"></ng-container>
+
+    </section>
+    
+</section>

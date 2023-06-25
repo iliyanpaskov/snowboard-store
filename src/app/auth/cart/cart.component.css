@@ -103,7 +103,6 @@
     font-size: 1.2rem;
     font-weight: 600;
     box-shadow: 3px 3px 17px 3px #837e7e;
-    
 }
 
 .total-section button:hover {
@@ -112,4 +111,24 @@
     transform: scale(1.15);
     background: #5d10eb;
     color: #64dfd3;
+}
+
+.empty-cart {
+    margin: 0 auto;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.empty-cart-title {
+    font-size: 2rem;
+    -webkit-text-stroke: 1px #000;
+    color: #64dfd3;
+}
+
+.empty-cart-text {
+    font-size: 1.3rem;
+}
+
+.empty-cart-text a:hover {
+    color: rgb(54, 255, 47);
 }

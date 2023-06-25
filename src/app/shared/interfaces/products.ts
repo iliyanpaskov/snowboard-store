@@ -19,3 +19,12 @@ export type CartProduct = {
     model: string,
     price: string | number,
 }
+
+export type OrderItem = {
+    objectId: string,
+    image:string,
+    brand: string,
+    model: string,
+    price: string | number,
+    createdAt:string
+}

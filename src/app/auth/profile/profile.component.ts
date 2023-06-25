@@ -29,8 +29,6 @@ export class ProfileComponent implements OnInit {
 
 
   ngOnInit(): void {
-    console.log(this.token);
-
     const userData = async () => {
       const res = await this.auth.currentUser(this.token)
       this.currentUser = res;
