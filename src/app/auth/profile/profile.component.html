@@ -1,4 +1,6 @@
-<div class="my-profile-wrapper">
+<app-loader *ngIf="isLoading"></app-loader>
+
+<div *ngIf="!isLoading" class="my-profile-wrapper">
     <section class="my-profile">
         <h1 class="my-profile-greeting">hello, {{currentUser?.username}}</h1>
         <p class="my-profile-user-id">Your personal identification number is <br><span>{{currentUser?.objectId}}</span> </p>

@@ -19,7 +19,7 @@ export class CartComponent implements DoCheck, OnInit {
     token: any = this.auth.user?.sessionToken;
     user: IUserProfile | any = []
     isCartEmpty: boolean = false;
-
+    isLoading:boolean = true; 
 
 
     removeHandler(id: string): void {
@@ -52,9 +52,9 @@ export class CartComponent implements DoCheck, OnInit {
         const userData = async () => {
             const res = await this.auth.currentUser(this.token)
             this.user = res;
+            this.isLoading = false;
         }
         userData();
-
     }
 
 }

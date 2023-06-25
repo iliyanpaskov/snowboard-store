@@ -1,4 +1,6 @@
-<section class="profile-wrapper">
+<app-loader *ngIf="isLoading"></app-loader>
+
+<section *ngIf="!isLoading" class="profile-wrapper">
     <section class="profile">
         <h1 class="profile-title">profile update</h1>
 

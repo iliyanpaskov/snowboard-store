@@ -1,4 +1,6 @@
-<section class="cart-wrapper">
+<app-loader *ngIf="isLoading"></app-loader>
+
+<section *ngIf="!isLoading" class="cart-wrapper">
     <div class="cart">
         <h1 class="cart-title">my cart</h1>
 

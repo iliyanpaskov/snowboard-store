@@ -1,4 +1,5 @@
-<section   class="orders-wrapper">
+<app-loader *ngIf="isLoading"></app-loader>
+<section  *ngIf="!isLoading" class="orders-wrapper">
     <section class="orders">
         <h1 class="orders-title">your orders</h1>
         <ng-template #orders>

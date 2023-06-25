@@ -12,6 +12,7 @@ export class ProfileComponent implements OnInit {
 
   currentUser: IUserProfile | undefined = undefined;
   token: any = this.auth.user?.sessionToken
+  isLoading:boolean = true;
 
   constructor(private auth: AuthService, private router: Router) { }
 
@@ -32,6 +33,7 @@ export class ProfileComponent implements OnInit {
     const userData = async () => {
       const res = await this.auth.currentUser(this.token)
       this.currentUser = res;
+      this.isLoading = false;
     }
     userData();
   }

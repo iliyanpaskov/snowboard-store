@@ -13,6 +13,7 @@ export class UpdateProfileComponent implements OnInit {
 
     currentUser: IUserProfile | undefined = undefined;
     token: any = this.auth.user?.sessionToken;
+    isLoading:boolean = true;
 
     constructor(private auth: AuthService, private router: Router) { }
 
@@ -32,11 +33,9 @@ export class UpdateProfileComponent implements OnInit {
 
     ngOnInit(): void {
         const loadForm = async () => {
-            console.log(this.token);
-            console.log(this.auth.user);
-
             const user = await this.auth.currentUser(this.token);
             this.currentUser = user;
+            this.isLoading = false;
         }
         loadForm();
     }

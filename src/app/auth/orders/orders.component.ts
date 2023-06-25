@@ -11,6 +11,7 @@ export class OrdersComponent implements OnInit,DoCheck{
 
   currentUserOrders: OrderItem[] = [];
   token: any = this.auth.user?.sessionToken;
+  isLoading:boolean = true;
 
   constructor(private auth:AuthService ){}
   
@@ -22,8 +23,7 @@ export class OrdersComponent implements OnInit,DoCheck{
     const userData = async () => {
       const res = await this.auth.currentUser(this.token)
       this.currentUserOrders = res?.orders; //?
-      console.log(this.token);
-      console.log(this.currentUserOrders);
+      this.isLoading = false;
     }
     userData();
   }

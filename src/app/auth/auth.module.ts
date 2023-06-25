@@ -9,6 +9,7 @@ import { OrdersComponent } from './orders/orders.component';
 import { CartComponent } from './cart/cart.component';
 import { LogoutComponent } from './logout/logout.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -26,6 +27,7 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
     CommonModule,
     AuthRoutingModule,
     FormsModule,
+    SharedModule
   ],
   exports: [
     LoginComponent,
