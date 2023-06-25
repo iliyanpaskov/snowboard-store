@@ -11,3 +11,11 @@ export interface IProducts {
     size:string,
     category:string,
 }
+
+export type CartProduct = {
+    objectId: string,
+    image:string,
+    brand: string,
+    model: string,
+    price: string | number,
+}

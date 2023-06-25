@@ -23,7 +23,7 @@
                     </div>
                     <div class="buttons">
                         <a routerLink={{snowboard.objectId}}>details</a>
-                        <a *ngIf="isLoggedIn" routerLink="">add to cart</a>
+                        <a *ngIf="isLoggedIn" (click)="cartAddHandler(snowboard.objectId,snowboard.image,snowboard.brand,snowboard.model,snowboard.price)">add to cart</a>
                     </div>
                 </div>
             </div>

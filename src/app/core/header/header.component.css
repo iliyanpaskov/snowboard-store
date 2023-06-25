@@ -87,3 +87,17 @@ header {
     width: 270px;
     text-align: center;
 }
+
+.cart-button {
+    position: relative;
+}
+
+.cart-button p {
+    position: absolute;
+    background: red;
+    padding: 2px 7px;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    right:-12px;
+    top: -25px;
+}

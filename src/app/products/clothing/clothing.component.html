@@ -23,7 +23,7 @@
                     </div>
                     <div class="buttons">
                         <a routerLink={{product.objectId}}>details</a>
-                        <a *ngIf="isLoggedIn" routerLink="">add to cart</a>
+                        <a *ngIf="isLoggedIn" (click)="cartAddHandler(product.objectId,product.image,product.brand,product.model,product.price)">add to cart</a>
                     </div>
                 </div>
             </div>

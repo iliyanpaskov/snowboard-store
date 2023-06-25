@@ -6,7 +6,7 @@
         <article class="product-card" *ngFor="let accessory of accessories">
             <div class="product-card-inner">
                 <div class="product-card-image">
-                    <img src={{accessory.image}} alt="">
+                    <img src={{accessory.image}} alt="accessory">
                 </div>
                 <div class="product-card-content">
                     <div class="product-info">
@@ -23,7 +23,7 @@
                     </div>
                     <div class="buttons">
                         <a routerLink={{accessory.objectId}}>details</a>
-                        <a *ngIf="isLoggedIn" routerLink="">add to cart</a>
+                        <a *ngIf="isLoggedIn" (click)="cartAddHandler(accessory.objectId,accessory.image,accessory.brand,accessory.model,accessory.price)">add to cart</a>
                     </div>
                 </div>
             </div>

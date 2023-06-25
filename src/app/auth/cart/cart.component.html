@@ -2,34 +2,24 @@
     <div class="cart">
         <h1 class="cart-title">my cart</h1>
         <section class="item-wrapper">
-            <article class="item">
+
+            <article *ngFor="let product of cartProducts" class="item">
                 <div class="item-img-container">
-                    <img src="../../../assets/about-us-img-3.jpg" alt="">
+                    <img src={{product.image}} alt="image">
                 </div>
                 <div class="item-text-container">
-                    <h3>Brand: <span></span></h3>
-                    <h4>Model:</h4>
-                    <p>Price:</p>
+                    <h3>Brand: <span>{{product.brand}}</span></h3>
+                    <h4>Model: <span>{{product.model}}</span></h4>
+                    <p>Price: <span>${{product.price}}</span></p>
                 </div>
                     <button class="remove-button"><i class="fa-solid fa-xmark"></i></button>
-           
             </article>
 
-            <article class="item">
-                <div class="item-img-container">
-                    <img src="../../../assets/about-us-img-3.jpg" alt="">
-                </div>
-                <div class="item-text-container">
-                    <h3>Brand:</h3>
-                    <h4>Model:</h4>
-                    <p>Price:</p>
-                </div>
-                <button class="remove-button"><i class="fa-solid fa-xmark"></i></button>
-            </article>
         </section>
         <section class="total-section">
-                <p>Total: $$$$$</p>
+                <p>Total: ${{totalPrice}}</p>
                 <button>Buy now <i class="fa-solid fa-cart-shopping"></i></button>
         </section>
+        
     </div>
 </section>
