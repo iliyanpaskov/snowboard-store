@@ -15,6 +15,8 @@ export class ClothingComponent implements OnInit {
 
   clothing: IProducts[] | any = [];
   isLoggedIn = this.auth.isLoggedIn;
+  isLoading:boolean = true; 
+
 
   cartAddHandler(objectId: string, image: string, brand: string, model: string, price: string | number,): void {
     this.cart.addToCart({ objectId, image, brand, model, price })
@@ -24,6 +26,7 @@ export class ClothingComponent implements OnInit {
     this.productsServices.getProducts('clothing').subscribe({
       next: (data:IProducts[]): void => {
         this.clothing = Object.values(data)[0]
+        this.isLoading = false;
       },
       error: (err) => {
         console.log(err);

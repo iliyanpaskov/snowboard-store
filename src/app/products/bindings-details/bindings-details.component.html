@@ -1,4 +1,6 @@
-<section class="details-container">
+<app-loader *ngIf="isLoading"></app-loader>
+
+<section *ngIf="!isLoading" class="details-container">
     <img src="../../../assets/bindings-details.jpg" alt="img">
     <section class="details">
     

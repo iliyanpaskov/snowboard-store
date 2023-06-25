@@ -12,6 +12,7 @@ import { BootsDetailsComponent } from './boots-details/boots-details.component';
 import { BindingsDetailsComponent } from './bindings-details/bindings-details.component';
 import { ClothingDetailsComponent } from './clothing-details/clothing-details.component';
 import { AccessoriesDetailsComponent } from './accessories-details/accessories-details.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -32,6 +33,7 @@ import { AccessoriesDetailsComponent } from './accessories-details/accessories-d
   imports: [
     CommonModule,
     ProductsRoutingModule,
+    SharedModule
   ],
 
 })

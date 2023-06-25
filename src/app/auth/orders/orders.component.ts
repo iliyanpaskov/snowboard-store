@@ -24,8 +24,6 @@ export class OrdersComponent implements OnInit,DoCheck{
       this.currentUserOrders = res?.orders; //?
       console.log(this.token);
       console.log(this.currentUserOrders);
-      
-      
     }
     userData();
   }

@@ -15,6 +15,7 @@ export class BindingsComponent implements OnInit {
 
   bindings: IProducts[] | any = [];
   isLoggedIn = this.auth.isLoggedIn;
+  isLoading:boolean = true; 
 
   cartAddHandler(objectId: string, image: string, brand: string, model: string, price: string | number,): void {
     this.cart.addToCart({ objectId, image, brand, model, price })
@@ -23,7 +24,8 @@ export class BindingsComponent implements OnInit {
   ngOnInit(): void {
     this.productsServices.getProducts('bindings').subscribe({
       next: (data:IProducts[]): void => {
-        this.bindings = Object.values(data)[0]
+        this.bindings = Object.values(data)[0];
+        this.isLoading = false;
       },
       error: (err) => {
         console.log(err);

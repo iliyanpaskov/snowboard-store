@@ -13,6 +13,8 @@ export class SnowboardDetailsComponent implements OnInit {
 
     id: any = null;
     currentProduct: IProducts[] | any = [];
+    isLoading:boolean = true; 
+
 
     constructor(private activeRoute: ActivatedRoute, private productsService: ProductsService, private _location: Location) {
         this.id = this.activeRoute.snapshot.params;
@@ -26,7 +28,8 @@ export class SnowboardDetailsComponent implements OnInit {
     ngOnInit(): void {
         this.productsService.getSingleProduct('snowboards', this.id.id).subscribe({
             next: (data: IProducts[]): void => {
-                this.currentProduct = data
+                this.currentProduct = data;
+                this.isLoading = false;
             },
             error: (err) => {
                 console.log(err);

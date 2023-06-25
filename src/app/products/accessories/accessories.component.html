@@ -1,7 +1,8 @@
-<section class="section">
+<app-loader *ngIf="isLoading"></app-loader>
+
+<section *ngIf="!isLoading" class="section">
     <h1 class="section-title">Accessories</h1>
     <div class="products-container">
-
 
         <article class="product-card" *ngFor="let accessory of accessories">
             <div class="product-card-inner">

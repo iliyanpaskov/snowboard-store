@@ -15,6 +15,7 @@ export class BootsComponent implements OnInit {
 
   boots: IProducts | any =[];
   isLoggedIn = this.auth.isLoggedIn;
+  isLoading:boolean = true; 
 
   cartAddHandler(objectId: string, image: string, brand: string, model: string, price: string | number,): void {
     this.cart.addToCart({ objectId, image, brand, model, price })
@@ -23,7 +24,8 @@ export class BootsComponent implements OnInit {
   ngOnInit(): void {
     this.productsServices.getProducts('boots').subscribe({
       next: (data:IProducts[]): void => {
-        this.boots = Object.values(data)[0]        
+        this.boots = Object.values(data)[0];
+        this.isLoading= false;      
       },
       error: (err) => {
         console.log(err);

@@ -15,6 +15,7 @@ export class AccessoriesComponent implements OnInit{
 
   accessories: IProducts | any = [];
   isLoggedIn = this.auth.isLoggedIn;
+  isLoading:boolean = true; 
 
   cartAddHandler(objectId: string, image: string, brand: string, model: string, price: string | number,): void {
     this.cart.addToCart({ objectId, image, brand, model, price })
@@ -24,6 +25,7 @@ export class AccessoriesComponent implements OnInit{
     this.productsServices.getProducts('accessories').subscribe({
       next: (data:IProducts[]): void => {
         this.accessories = Object.values(data)[0];
+        this.isLoading = false;
       },
       error: (err) => {
         console.log(err);
