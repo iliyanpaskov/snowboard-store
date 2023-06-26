@@ -13,7 +13,7 @@
                         <p>{{order.model}}</p>
                         <p>${{order.price}}</p>
                     </div>
-                    <button>Cancel order</button>
+                    <button (click)="cancelOrderHandler(order.objectId)">Cancel order</button>
                     
                 </li>
             </ul>
