@@ -20,7 +20,17 @@ export class SignUpComponent {
         const register = async () => {
             let res = await this.auth.signUp(username, password, email, address, fullName, phone)
             this.auth.isLoggedIn = true;
-            this.auth.user = res;
+            this.auth.user = {
+                objectId: res.objectId,
+                createdAt: res.createdAt,
+                sessionToken: res.sessionToken,
+                orders: res.orders,
+                username:username,
+                email:email,
+                fullName:fullName,
+                phone:phone,
+                address:address
+            };
             console.log(res);
             console.log(this.auth.user);
         }

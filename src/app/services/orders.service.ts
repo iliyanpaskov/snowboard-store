@@ -14,11 +14,13 @@ const headers = {
 @Injectable({
   providedIn: 'root'
 })
+
 export class OrdersService {
 
   counter: number = 0;
   ordersList: CartProduct[] = [];
   totalPrice: number = 0;
+
   constructor() { }
 
   addToCart(product: CartProduct): void {
@@ -39,7 +41,6 @@ export class OrdersService {
     })
   }
 
-  // async sendOrder(id: string, token: string,username:string, email:string, address:string, fullName:string, phone:string,orders:CartProduct[]) {
   async sendOrder(id: string, token: string, orders: CartProduct[]) {
     const url = `${signupURL}/${id}`
     try {
@@ -64,6 +65,10 @@ export class OrdersService {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  async cancelOrder() {
+    
   }
 
 }

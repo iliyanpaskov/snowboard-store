@@ -18,9 +18,9 @@ export interface IUserLogin {
   phone: string,
   address: string,
   createdAt: string,
-  updatedAt: string,
+  updatedAt?: string,
   fullName: string,
-  ACL: object,
+  ACL?: object,
   sessionToken: string,
   orders?:Object[]
 }

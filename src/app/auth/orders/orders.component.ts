@@ -12,6 +12,7 @@ export class OrdersComponent implements OnInit,DoCheck{
   currentUserOrders: OrderItem[] = [];
   token: any = this.auth.user?.sessionToken;
   isLoading:boolean = true;
+  hasOrders:boolean = false;
 
   constructor(private auth:AuthService ){}
   
@@ -21,9 +22,12 @@ export class OrdersComponent implements OnInit,DoCheck{
   
   ngOnInit(): void {
     const userData = async () => {
-      const res = await this.auth.currentUser(this.token)
+      const res = await this.auth.currentUser(this.token);
       this.currentUserOrders = res?.orders; //?
       this.isLoading = false;
+      if(this.currentUserOrders.length > 0){
+        this.hasOrders = true
+      }
     }
     userData();
   }
