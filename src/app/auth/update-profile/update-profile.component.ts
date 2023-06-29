@@ -11,9 +11,9 @@ import { IUserProfile } from 'src/app/shared/interfaces';
 })
 export class UpdateProfileComponent implements OnInit {
 
-    currentUser: IUserProfile | undefined = undefined;
+    currentUser: IUserProfile | null = null;
     token: any = this.auth.user?.sessionToken;
-    isLoading:boolean = true;
+    isLoading: boolean = true;
 
     constructor(private auth: AuthService, private router: Router) { }
 
@@ -21,12 +21,25 @@ export class UpdateProfileComponent implements OnInit {
         if (updateForm.invalid) { return };
         const { username, email, address, fullName, phone } = updateForm.value;
         const res = async () => {
-            const update = await this.auth.updateUser(id, sessionToken,username, email, address, fullName, phone )
-            this.currentUser = update;
+            const update = await this.auth.updateUser(id, sessionToken, username, email, address, fullName, phone);
+            if (!update.error) {
+                this.currentUser = {
+                    objectId: id,
+                    username: username,
+                    email: email,
+                    address: address,
+                    fullName: fullName,
+                    phone: phone,
+                    sessionToken: sessionToken,
+                    updatedAt: update.updatedAt,
+                };
+                this.auth.user = this.currentUser;
+                this.router.navigate(['/']);
+            } else {
+                updateForm.reset();
+            }
         }
         res();
-        this.auth.user = updateForm.value
-        this.router.navigate(['/']);
     }
 
 

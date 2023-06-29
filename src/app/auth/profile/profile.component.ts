@@ -10,7 +10,7 @@ import { IUserProfile } from 'src/app/shared/interfaces';
 })
 export class ProfileComponent implements OnInit {
 
-  currentUser: IUserProfile | undefined = undefined;
+  currentUser: IUserProfile | null = null;
   token: any = this.auth.user?.sessionToken
   isLoading:boolean = true;
 
@@ -19,7 +19,7 @@ export class ProfileComponent implements OnInit {
   deleteHandler(id:any, sessionToken: any) {
     const res = async () => {
       const delData = await this.auth.deleteUser(id, sessionToken)
-      this.currentUser = undefined;
+      this.currentUser = null;
     }
     res();
     this.auth.isLoggedIn = false;

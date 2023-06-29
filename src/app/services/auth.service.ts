@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { environment } from 'src/environments/environment';
 import { IUserLogin } from '../shared/interfaces';
-import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 const apiURL = environment.apiURL;
 const signupURL = environment.apiSignUpURL;
@@ -24,7 +24,7 @@ export class AuthService {
   isLoggedIn: boolean = false;
   user: IUserLogin | null = null
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private toastr:ToastrService) { }
 
   login(username: string, password: string) {
     const url: string = `${apiURL}/login?username=${username}&password=${password}`;
@@ -56,7 +56,7 @@ export class AuthService {
         throw data.error;
       }
     } catch (error) {
-      console.log(error);
+      this.toastr.error(`${error}`)
     }
 
   }
@@ -77,11 +77,13 @@ export class AuthService {
       });
       const data = await res.json();
       if (!data.error) {
-        return data
+        this.toastr.success(username, 'Welcome,')
+        return data;
       } else {
-        throw data.error
+        throw data.error;
       }
     } catch (error) {
+      this.toastr.error(`${error}`)
 
     }
   }
@@ -101,12 +103,13 @@ export class AuthService {
       })
       const data = await res.json();
       if (!data.error) {
-        return data
+        this.toastr.warning(`Profile ${id} was deleted 😢!`)
+        return data;
       } else {
-        throw data.error
+        throw data.error;
       }
     } catch (error) {
-      console.log(error);
+     this.toastr.error(`${error}`)
 
     }
   }
@@ -133,13 +136,13 @@ export class AuthService {
       })
       const data = await res.json();
       if (!data.error) {
+        this.toastr.success(username, 'Your profile was updated,')
         return data
       } else {
         throw data.error
       }
     } catch (error) {
-      console.log(error);
-
+      this.toastr.error(`${error}`)
     }
   }
 
