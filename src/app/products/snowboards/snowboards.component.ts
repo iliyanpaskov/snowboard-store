@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
 import { OrdersService } from 'src/app/services/orders.service';
 import { ProductsService } from 'src/app/services/products.service';
@@ -10,7 +11,7 @@ import { IProducts } from 'src/app/shared/interfaces';
   styleUrls: ['./snowboards.component.css']
 })
 export class SnowboardsComponent implements OnInit {
-  constructor(private productsServices: ProductsService, private auth: AuthService, private cart: OrdersService) { }
+  constructor(private productsServices: ProductsService, private auth: AuthService, private cart: OrdersService, private toastr:ToastrService) { }
 
   snowboards: IProducts[] | any = [];
   isLoggedIn = this.auth.isLoggedIn;
@@ -27,7 +28,7 @@ export class SnowboardsComponent implements OnInit {
         this.isLoading = false
       },
       error: (err) => {
-        console.log(err);
+        this.toastr.show(`Please try again later! 🥺`);
       }
     })
   }

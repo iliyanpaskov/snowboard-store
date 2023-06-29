@@ -23,7 +23,7 @@ export class OrdersComponent implements OnInit, DoCheck {
     cancelOrderHandler(id: string) {
         this.restUserOrders = this.currentUserOrders.filter(product => product.objectId !== id);
         const restOrders = async () => {
-            await this.orders.sendOrder(this.userId, this.token, this.restUserOrders);
+            await this.orders.cancelOrder(this.userId, this.token, this.restUserOrders);
             this.router.navigate(['/']);
         }
         restOrders();
@@ -37,7 +37,7 @@ export class OrdersComponent implements OnInit, DoCheck {
     ngOnInit(): void {
         const userData = async () => {
             const res = await this.auth.currentUser(this.token);
-            this.currentUserOrders = res?.orders; //?
+            this.currentUserOrders = res?.orders; 
             this.isLoading = false;
             if (this.currentUserOrders.length > 0) {
                 this.hasOrders = true;
