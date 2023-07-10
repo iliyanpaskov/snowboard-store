@@ -11,14 +11,14 @@ import { IUserProfile } from 'src/app/shared/interfaces';
 export class ProfileComponent implements OnInit {
 
   currentUser: IUserProfile | null = null;
-  token: any = this.auth.user?.sessionToken
-  isLoading:boolean = true;
+  token = this.auth.user?.sessionToken as string;
+  isLoading: boolean = true;
 
   constructor(private auth: AuthService, private router: Router) { }
 
-  deleteHandler(id:any, sessionToken: any) {
+  deleteHandler(id: string | undefined, sessionToken: string | undefined) {
     const res = async () => {
-      const delData = await this.auth.deleteUser(id, sessionToken)
+      const delData = await this.auth.deleteUser(id as string, sessionToken as string)
       this.currentUser = null;
     }
     res();

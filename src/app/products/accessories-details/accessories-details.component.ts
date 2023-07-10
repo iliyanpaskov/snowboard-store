@@ -13,7 +13,7 @@ import { ProductsService } from 'src/app/services/products.service';
     styleUrls: ['./accessories-details.component.css']
 })
 export class AccessoriesDetailsComponent {
-    id: any = null;
+    id: any = '';
     currentProduct: IProducts[] | any = [];
     isLoading: boolean = true;
 

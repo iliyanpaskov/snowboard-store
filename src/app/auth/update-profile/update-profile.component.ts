@@ -12,7 +12,7 @@ import { IUserProfile } from 'src/app/shared/interfaces';
 export class UpdateProfileComponent implements OnInit {
 
     currentUser: IUserProfile | null = null;
-    token: any = this.auth.user?.sessionToken;
+    token = this.auth.user?.sessionToken as string;
     isLoading: boolean = true;
 
     constructor(private auth: AuthService, private router: Router) { }

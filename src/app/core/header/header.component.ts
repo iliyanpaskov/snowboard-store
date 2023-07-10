@@ -12,7 +12,7 @@ import { CartProduct, IUserLogin } from 'src/app/shared/interfaces';
 export class HeaderComponent implements DoCheck {
 
   isLoggedIn = false;
-  user: IUserLogin | any = null
+  user: IUserLogin | null = null
   count: number = this.orders.counter;
   cartList: CartProduct[] = this.orders.ordersList;
 

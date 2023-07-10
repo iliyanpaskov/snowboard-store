@@ -16,8 +16,8 @@ export class CartComponent implements DoCheck, OnInit {
 
     cartProducts = this.orders.ordersList;
     totalPrice = this.orders.totalPrice;
-    token: any = this.auth.user?.sessionToken;
-    user: IUserProfile | any = []
+    token = this.auth.user?.sessionToken as string;
+    user: IUserProfile | any = [];
     isCartEmpty: boolean = false;
     isLoading:boolean = true; 
 

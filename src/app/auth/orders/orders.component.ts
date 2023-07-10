@@ -12,8 +12,8 @@ import { OrderItem } from 'src/app/shared/interfaces';
 export class OrdersComponent implements OnInit, DoCheck {
 
     currentUserOrders: OrderItem[] = [];
-    token: any = this.auth.user?.sessionToken;
-    userId: any = this.auth.user?.objectId;
+    token = this.auth.user?.sessionToken as string;
+    userId = this.auth.user?.objectId as string;
     isLoading: boolean = true;
     hasOrders: boolean = false;
     restUserOrders: OrderItem[] = [];
