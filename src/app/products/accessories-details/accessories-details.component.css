@@ -25,7 +25,7 @@
     height: 100%;
     display: flex;
     align-items: center;
-    padding: 0 2rem;
+    padding: 2rem;
     background: #231f20c0;
     justify-content: space-between;
     align-items: center;
@@ -34,8 +34,8 @@
 }
 
 .details-image-wrapper {
-    width: 27rem;
-    height: 40rem;
+    width: 30rem;
+    height: 37rem;
 }
 
 .details-image-wrapper img {
@@ -62,7 +62,7 @@
     align-items: start;
 }
 
-.details-content h3{
+.details-content h3 {
     text-transform: capitalize;
     margin-right: 2rem;
     font-size: 1.4rem;
@@ -70,7 +70,7 @@
     margin-bottom: 0;
 }
 
-.details-content p{
+.details-content p {
     font-size: 1.2rem;
     font-weight: 500;
     margin-bottom: 3px;
@@ -104,21 +104,86 @@
 }
 
 .button-wrapper button {
-   background: #64DFD3;
-   width: 100%;
-   text-transform: uppercase;
-   padding: 0.5rem 1rem;
-   font-size: 1.1rem;
-   border: none;
-   border-radius: 15px;
-   font-weight: 600;
-   box-shadow: 0 0 5px 1px white;
+    background: #64DFD3;
+    width: 100%;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 15px;
+    font-weight: 600;
+    box-shadow: 0 0 5px 1px white;
 }
 
 .button-wrapper button:hover {
-        cursor: pointer;
-        transition: transform .5s ease;
-        transform: scale(1.15);
-        background: #000;
-        color: #64dfd3;
+    cursor: pointer;
+    transition: transform .5s ease;
+    transform: scale(1.15);
+    background: #000;
+    color: #64dfd3;
 }
+
+@media all and (max-width:1400px) {
+    .details-image-wrapper {
+        width: 50%;
+        height: 77%;
+    }
+}
+
+@media all and (max-width:1200px) {
+    .details-container {
+        height: auto;
+        min-height: auto;
+    }
+
+    .details-image-wrapper {
+        width: 40%;
+        height: 50%;
+    }
+
+    .details-content-wrapper {
+        width: 55%;
+        margin-bottom: 100px;
+    }
+
+    .date-container {
+        bottom: 0;
+        right: 5px;
+    }
+
+    .button-wrapper {
+        position: absolute;
+        inset: 90% 20%;
+        transform: translate(-50%, -50%);
+        width: 10rem;
+    }
+
+}
+
+@media all and (max-width:1024px) {
+    .details-container {
+        height: 100vh;
+    }
+    .button-wrapper {
+        inset: 90% 50%;
+        transform: translate(-50%, -50%);
+        width: 10rem;
+    }
+
+    .details-image-wrapper {
+       display: none;
+    }
+
+    .details-content-wrapper {
+        width: 100%;
+        margin-bottom: 100px;
+    }
+    
+  }
+
+  @media all and (max-width:768px) {
+    .details-container {
+     height: 200vh;
+    }
+  
+  }
