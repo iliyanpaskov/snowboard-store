@@ -87,3 +87,34 @@
     background: red;
     color: #000;
 }
+
+@media all and (max-width:1300px) {
+    .my-profile {
+        max-width: 90%;
+    }
+}
+
+@media all and (max-width:768px) {
+    .my-profile-buttons-list {
+        margin: 0;
+        width: 95%;
+        align-items: center;
+    }
+
+    .buttons-wrapper {
+        width: 100%;
+    }
+
+    .delete-button {
+        width: 80px !important; 
+    }
+}
+
+@media all and (max-width:480px) {
+    .my-profile-buttons-list {
+      flex-direction: column;
+    }
+    .my-profile-buttons-list li {
+        margin: 1rem;
+    }
+}

@@ -24,7 +24,7 @@
 }
 
 .boots {
-    grid-area: boots ;
+    grid-area: boots;
 }
 
 .bindings {
@@ -46,12 +46,12 @@
 .products-section-wrapper {
     display: grid;
     gap: 2rem;
-    grid-template-columns: repeat(5,1fr) ;
-    grid-template-areas: 
-    "boots boots boots bindings bindings"
-    "snowboards snowboards snowboards snowboards snowboards"
-    "accessories accessories clothing clothing clothing";
-    padding: 5px 15px; 
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas:
+        "boots boots boots bindings bindings"
+        "snowboards snowboards snowboards snowboards snowboards"
+        "accessories accessories clothing clothing clothing";
+    padding: 5px 15px;
 }
 
 
@@ -115,4 +115,56 @@
     transform: scale(1.15);
     background: #5d10eb;
     color: #64dfd3;
+}
+
+@media all and (max-width:1200px) {
+    .products {
+        max-width: 90%;
+    }
+
+    .products-section {
+        width: 95%;
+        max-height: 100%;
+    }
+
+    .products-section-wrapper {
+        grid-template-areas:
+            "snowboards snowboards snowboards snowboards snowboards"
+            "clothing clothing clothing accessories accessories"
+            "clothing clothing clothing accessories accessories"
+            "bindings bindings boots boots boots"
+            "bindings bindings boots boots boots";
+        padding: 5px 15px;
+        justify-items: center;
+        align-items: stretch;
+        justify-content: center;
+        align-content: center;
+    }
+}
+
+@media all and (max-width:768px) {
+    .products-section-wrapper {
+        grid-template-areas:
+            "snowboards snowboards snowboards snowboards snowboards"
+            "clothing clothing clothing clothing clothing"
+            "boots boots boots boots boots"
+            "bindings bindings bindings bindings bindings"
+            "accessories accessories accessories accessories accessories";
+    }
+
+    .products-section {
+        width: 95%;
+        height: 400px;
+        align-items: center;
+    }
+}
+
+@media all and (max-width:480px) {
+    .products-section {
+        height: 300px;
+    }
+
+    .products-section-button {
+        width: 10rem;
+    }
 }

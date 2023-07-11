@@ -26,6 +26,7 @@ header {
     transition-property: transform;
     width: 110px;
 }
+
 .logo:hover {
     transform: rotate(360deg);
     -webkit-transform: rotate(360deg);
@@ -47,18 +48,18 @@ header {
     color: #000;
     font-size: 1.1rem;
     font-weight: 600;
-    padding: 5px  11px;
+    padding: 5px 11px;
 }
 
 .navigation-list li a:hover {
-  color: #64dfd3;
+    color: #64dfd3;
 }
 
 .navigation-list li {
-   border: 1px solid black;
-   margin: 6px;
-   border-radius: 8px;
-   background: #64dfd3;
+    border: 1px solid black;
+    margin: 6px;
+    border-radius: 8px;
+    background: #64dfd3;
 }
 
 .navigation-list li:hover {
@@ -98,6 +99,30 @@ header {
     padding: 2px 7px;
     border-radius: 50%;
     font-size: 0.9rem;
-    right:-12px;
+    right: -12px;
     top: -25px;
+}
+
+@media all and (max-width:1300px) {
+    .navigation {
+        max-width: 90%;
+    }
+}
+
+@media all and (max-width:1024px) {
+    .navigation {
+        flex-direction: column;
+    }
+}
+
+@media all and (max-width:480px) {
+    .navigation-list li a {
+        font-size: 1rem;
+        font-weight: 400;
+        padding: 5px;
+    }
+
+    .navigation-list li {
+        margin: 4px;
+    }
 }

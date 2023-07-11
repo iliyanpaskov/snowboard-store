@@ -131,3 +131,29 @@
     background: #5d10eb;
     color: #64dfd3;
 }
+
+@media all and (max-width:1300px) {
+    .products-container {
+        width: 90%;
+    }
+}
+
+@media all and (max-width:1200px) {
+    .products-container {
+        grid-template-columns: repeat(2,1fr);
+        justify-items: center;
+    }
+}
+
+@media all and (max-width:768px) {
+    .products-container {
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+@media all and (max-width:480px) {
+    .product-card {
+        width: 18rem;
+        height: 20rem;
+    } 
+}

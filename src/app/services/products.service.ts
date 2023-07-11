@@ -25,7 +25,7 @@ export class ProductsService {
         return data;
     }
 
-    getSingleProduct(productsGroupe: string, id: string | number) {
+    getSingleProduct(productsGroupe: string, id: string) {
         const url: string = `${apiURL}/classes/${productsGroupe}/${id}`;
         const data = this.http.get<IProducts[]>(url, {
             headers: headers,

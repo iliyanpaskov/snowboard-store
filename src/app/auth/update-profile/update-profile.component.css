@@ -49,9 +49,9 @@
     font-weight: 600;
 }
 
-.profile-submit{
+.profile-submit {
     width: 150px !important;
-    background: #64dfd3; 
+    background: #64dfd3;
     font-size: 1.1rem;
     font-weight: 600;
 }
@@ -75,12 +75,29 @@
     transition-duration: 2s;
     transition-property: transform;
 }
+
 .logo:hover {
     transform: rotate(360deg);
     -webkit-transform: rotate(360deg);
 }
 
-.error{
+.error {
     color: red;
     font-size: 0.9rem;
+}
+
+@media all and (max-width:1300px) {
+    .profile {
+        width: 95%;
+    }
+}
+
+@media all and (max-width:380px) {
+    .profile-form input {
+        width: 220px;
+    }
+
+    .logo {
+        display: none;
+    }
 }

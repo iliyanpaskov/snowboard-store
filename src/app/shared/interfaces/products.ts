@@ -12,6 +12,7 @@ export interface IProducts {
     category:string,
 }
 
+
 export type CartProduct = {
     objectId: string,
     image:string,

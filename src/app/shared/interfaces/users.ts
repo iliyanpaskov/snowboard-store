@@ -1,14 +1,22 @@
+export interface IUserOrders {
+  objectId: string,
+  image: string,
+  brand: string,
+  model: string,
+  price: string | number,
+}
+
 export interface IUserProfile {
   username: string,
   email: string,
   phone: string,
   address: string,
   createdAt?: string,
-  updatedAt: string,
+  updatedAt?: string,
   objectId: string,
   fullName: string,
   sessionToken: string,
-  orders?:Object[]
+  orders?: IUserOrders[]
 }
 
 export interface IUserLogin {
@@ -22,5 +30,5 @@ export interface IUserLogin {
   fullName: string,
   ACL?: object,
   sessionToken: string,
-  orders?:Object[]
+  orders?: IUserOrders[]
 }

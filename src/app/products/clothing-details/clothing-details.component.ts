@@ -11,12 +11,12 @@ import { IProducts } from 'src/app/shared/interfaces';
 })
 export class ClothingDetailsComponent {
 
-    id: any = null;
+    id: string = '';
     currentProduct: IProducts[] | any = [];
     isLoading: boolean = true;
 
     constructor(private activeRoute: ActivatedRoute, private productsService: ProductsService, private _location: Location) {
-        this.id = this.activeRoute.snapshot.params;
+        this.id = Object.values(this.activeRoute.snapshot.params)[0];
     }
 
     goBack() {
@@ -25,7 +25,7 @@ export class ClothingDetailsComponent {
 
 
     ngOnInit(): void {
-        this.productsService.getSingleProduct('clothing', this.id.id).subscribe({
+        this.productsService.getSingleProduct('clothing', this.id).subscribe({
             next: (data: IProducts[]): void => {
                 this.currentProduct = data;
                 this.isLoading = false;

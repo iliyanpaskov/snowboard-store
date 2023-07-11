@@ -74,3 +74,22 @@
 .footer-copyright {
     color: #6CC8BF;
 }
+
+
+@media all and (max-width:768px) {
+    .footer-pay-list,
+    .footer-delivery-list,
+    .footer-services-list {
+        width: 100%;
+    }
+
+    .footer-list li {
+        margin: 15px;
+    }
+}
+
+@media all and (max-width:480px) {
+    .footer-pay-list img {
+        width: 40px;
+    }
+}

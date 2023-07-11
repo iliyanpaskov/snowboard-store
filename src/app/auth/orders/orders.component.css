@@ -67,7 +67,7 @@
 }
 
 .orders-list-item-content-wrapper p {
-font-size: 1.3rem;
+    font-size: 1.3rem;
 }
 
 .orders-list-item button {
@@ -107,4 +107,32 @@ font-size: 1.3rem;
 
 .no-orders-text a:hover {
     color: rgb(54, 255, 47);
+}
+
+@media all and (max-width:1200px) {
+    .orders {
+        max-width: 90%;
+    }
+}
+
+@media all and (max-width:1024px) {
+    .orders-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media all and (max-width:768px) {
+    .orders-list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .orders-list-item {
+        width: 80%;
+        margin-bottom: 1rem;
+    }
+
+    .orders-list-item-image-wrapper {
+        height: 24rem;
+    }
+
 }

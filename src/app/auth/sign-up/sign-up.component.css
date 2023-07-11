@@ -95,3 +95,27 @@
     color: red;
     font-size: 0.9rem;
 }
+
+@media all and (max-width:1300px) {
+    .sign-up {
+        max-width: 90%;
+    }
+}
+
+@media all and (max-width:480px) {
+    .sign-up-form input {
+        width: 200px;
+        height: 30px;
+        padding: 3px 5px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+
+    .logo {
+       display: none;
+    }
+
+    .message {
+       text-align: center;
+    }
+}

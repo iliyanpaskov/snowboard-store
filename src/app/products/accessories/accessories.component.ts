@@ -14,11 +14,11 @@ export class AccessoriesComponent implements OnInit{
 
   constructor (private cart:OrdersService ,private productsServices:ProductsService, private auth:AuthService, private toastr:ToastrService) {  }
 
-  accessories: IProducts | any = [];
+  accessories: IProducts |any = [];
   isLoggedIn = this.auth.isLoggedIn;
   isLoading:boolean = true; 
 
-  cartAddHandler(objectId: string, image: string, brand: string, model: string, price: string | number,): void {
+  cartAddHandler(objectId: string, image: string, brand: string, model: string, price: string | number): void {
     this.cart.addToCart({ objectId, image, brand, model, price })
   }
 
@@ -29,7 +29,7 @@ export class AccessoriesComponent implements OnInit{
         this.isLoading = false;
       },
       error: (err) => {
-        this.toastr.show(`Please try again later! 🥺`)
+        this.toastr.show(`Please try again later! ${err} 🥺`)
       }
     })
   }

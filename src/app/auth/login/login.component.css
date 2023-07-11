@@ -49,9 +49,9 @@
     font-weight: 600;
 }
 
-.login-submit{
+.login-submit {
     width: 150px !important;
-    background: #64dfd3; 
+    background: #64dfd3;
     font-size: 1.1rem;
     font-weight: 600;
 }
@@ -86,12 +86,37 @@
     transition-duration: 2s;
     transition-property: transform;
 }
+
 .logo:hover {
     transform: rotate(360deg);
     -webkit-transform: rotate(360deg);
 }
 
-.error{
+.error {
     color: red;
     font-size: 0.9rem;
+}
+
+@media all and (max-width:1300px) {
+    .login {
+        max-width: 90%;
+    }
+}
+
+@media all and (max-width:480px) {
+    .login-form input {
+        width: 200px;
+        height: 30px;
+        padding: 3px 5px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+
+    .logo {
+       display: none;
+    }
+
+    .message {
+       text-align: center;
+    }
 }

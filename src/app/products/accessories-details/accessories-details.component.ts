@@ -13,12 +13,16 @@ import { ProductsService } from 'src/app/services/products.service';
     styleUrls: ['./accessories-details.component.css']
 })
 export class AccessoriesDetailsComponent {
-    id: any = '';
+    id: string = '';
     currentProduct: IProducts[] | any = [];
     isLoading: boolean = true;
 
     constructor(private activeRoute: ActivatedRoute, private productsService: ProductsService, private _location: Location) {
-        this.id = this.activeRoute.snapshot.params;
+        console.log(this.activeRoute.snapshot.url);
+
+        this.id = Object.values(this.activeRoute.snapshot.params)[0];
+        console.log(this.id);
+
     }
 
     goBack() {
@@ -27,7 +31,7 @@ export class AccessoriesDetailsComponent {
 
 
     ngOnInit(): void {
-        this.productsService.getSingleProduct('accessories', this.id.id).subscribe({
+        this.productsService.getSingleProduct('accessories', this.id).subscribe({
             next: (data: IProducts[]): void => {
                 this.currentProduct = data;
                 this.isLoading = false;

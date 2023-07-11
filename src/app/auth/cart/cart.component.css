@@ -13,6 +13,8 @@
     padding: 15px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .cart-title {
@@ -31,6 +33,7 @@
 }
 
 .item {
+    position: relative;
     display: flex;
     width: 100%;
     max-width: 800px;
@@ -131,4 +134,47 @@
 
 .empty-cart-text a:hover {
     color: rgb(54, 255, 47);
+}
+
+@media all and (max-width:1300px) {
+    .cart {
+        max-width: 90%;
+    }
+}
+
+@media all and (max-width:1200px) {
+    .item-wrapper {
+        width: 90%;
+    }
+}
+
+@media all and (max-width:1024px) {
+    .item-img-container {
+        width: 65%;
+    }
+
+    .item-text-container {
+        width: 30%;
+    }
+}
+
+@media all and (max-width:768px) {
+    .item {
+        flex-direction: column;
+    }
+
+    .item-img-container,
+    .item-text-container{
+        width: 90%;
+    }
+
+    .item-img-container{
+        height: 450px;
+    }
+
+    .remove-button {
+        position: absolute;
+        top: 0.3rem;
+        right: 0.3rem;
+    }
 }

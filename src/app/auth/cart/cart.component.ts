@@ -15,7 +15,7 @@ export class CartComponent implements DoCheck, OnInit {
     constructor(private orders: OrdersService, private auth: AuthService, private router: Router) { }
 
     cartProducts = this.orders.ordersList;
-    totalPrice = this.orders.totalPrice;
+    totalPrice:number = this.orders.totalPrice;
     token = this.auth.user?.sessionToken as string;
     user: IUserProfile | any = [];
     isCartEmpty: boolean = false;
@@ -45,7 +45,7 @@ export class CartComponent implements DoCheck, OnInit {
         } else {
             this.isCartEmpty = false
         }
-        this.totalPrice = this.orders.totalPrice;
+        this.totalPrice = Number(this.orders.totalPrice.toFixed(2));
     }
 
     ngOnInit(): void {

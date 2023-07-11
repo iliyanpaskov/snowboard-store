@@ -12,12 +12,12 @@ import { IProducts } from 'src/app/shared/interfaces';
 
 export class BootsDetailsComponent implements OnInit {
 
-    id: any = null;
+    id: string = '';
     currentProduct: IProducts[] | any = [];
   isLoading:boolean = true; 
 
     constructor(private productsService: ProductsService, private activeRoute: ActivatedRoute, private _location: Location) {
-        this.id = this.activeRoute.snapshot.params;
+        this.id = Object.values(this.activeRoute.snapshot.params)[0];
     }
 
     goBack() {
@@ -25,7 +25,7 @@ export class BootsDetailsComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.productsService.getSingleProduct('boots', this.id.id).subscribe({
+        this.productsService.getSingleProduct('boots', this.id).subscribe({
             next: (data: IProducts[]): void => {
                 this.currentProduct = data;
                 this.isLoading = false;
