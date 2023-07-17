@@ -32,8 +32,7 @@ export class AuthService {
     const data = this.http.get<IUserLogin>(url, {
       headers: headers,
     })
-    console.log(data);
-    return data
+    return data;
   }
 
 
@@ -56,7 +55,7 @@ export class AuthService {
         throw data.error;
       }
     } catch (error) {
-      this.toastr.error(`${error}`)
+      this.toastr.error(`${error}`);
     }
 
   }
@@ -83,8 +82,7 @@ export class AuthService {
         throw data.error;
       }
     } catch (error) {
-      this.toastr.error(`${error}`)
-
+      this.toastr.error(`${error}`);
     }
   }
 
@@ -109,8 +107,7 @@ export class AuthService {
         throw data.error;
       }
     } catch (error) {
-     this.toastr.error(`${error}`)
-
+     this.toastr.error(`${error}`);
     }
   }
 
@@ -142,7 +139,7 @@ export class AuthService {
         throw data.error
       }
     } catch (error) {
-      this.toastr.error(`${error}`)
+      this.toastr.error(`${error}`);
     }
   }
 
