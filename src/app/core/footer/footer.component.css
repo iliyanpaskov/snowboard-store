@@ -72,7 +72,20 @@
 }
 
 .footer-copyright {
+    width: 100%;
+}
+
+.footer-copyright p {
     color: #6CC8BF;
+    text-align: center;
+}
+
+.footer-date {
+    text-align: center;
+    margin:1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: 'Oswald',sans-serif;
 }
 
 
