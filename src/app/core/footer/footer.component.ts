@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { interval, map } from 'rxjs';
+import { interval, map, startWith } from 'rxjs';
 
 @Component({
   selector: 'app-footer',
@@ -9,6 +9,7 @@ import { interval, map } from 'rxjs';
 export class FooterComponent {
 
   $time = interval(1000).pipe(
+    startWith(null),
     map(()=> new Date() )
   )
 
